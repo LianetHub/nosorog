@@ -355,10 +355,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 delay: 8000,
                 stopOnLastSlide: false,
             },
-            // effect: "fade",
-            // fadeEffect: {
-            //     crossFade: true
-            // },
+            effect: "fade",
+            fadeEffect: {
+                crossFade: true
+            },
 
             navigation: {
                 prevEl: '.promo__controls-prev',
@@ -366,9 +366,11 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             on: {
                 init: (swiper) => {
+                    const nextEl = swiper.navigation.nextEl;
                     let speed = swiper.params.speed;
                     let autoplaySpeed = swiper.params.autoplay.delay;
-                    swiper.navigation.nextEl.style.setProperty('--counting-speed', ((speed + autoplaySpeed) / 1000) + 's');
+                    nextEl.style.setProperty('--counting-speed', ((speed + autoplaySpeed) / 1000) + 's');
+                    nextEl.classList.add('counting');
                 },
                 slideChangeTransitionStart: (swiper) => {
                     const nextEl = swiper.navigation.nextEl;

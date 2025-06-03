@@ -1,13 +1,4 @@
-.marked-text {
-	border-radius: 0.3125rem;
-	background: rgba(214, 223, 106, 0.5);
-	padding-inline: 0.25em;
-	margin-inline: -0.25em;
-	@media (min-width: $md1) {
-		white-space: nowrap;
-	}
-}
-
+/* Title (44) */
 .title {
 	font-family: $font-steppe;
 	font-size: 2.75rem;
@@ -15,12 +6,20 @@
 	letter-spacing: -0.165rem;
 }
 
+/* Display (48) */
 .title-lg {
-	font-weight: 600;
-	font-size: 1.375rem;
-	@media (min-width: $md4) {
-		font-size: 2.75rem;
-	}
+	font-family: $font-steppe;
+	font-size: 3rem;
+	line-height: 116.667%;
+	letter-spacing: -0.18rem;
+}
+
+/* Subtitle (26) */
+.title-sm {
+	font-family: $font-steppe;
+	font-size: 1.625rem;
+	line-height: 123.077%;
+	letter-spacing: -0.0975rem;
 }
 
 // .favorite-btn {

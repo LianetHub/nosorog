@@ -11,10 +11,16 @@
                     <div class="promo__slider swiper">
                         <div class="swiper-wrapper">
                             <div class="promo__slide swiper-slide">
-                                <img src="@img/promo/01.jpg" class="cover-image" alt="Промо-фото">
+                                <img src="@img/projects/01.jpg" class="cover-image" alt="Промо-фото">
                             </div>
                             <div class="promo__slide swiper-slide">
-                                <img src="@img/promo/01.jpg" class="cover-image" alt="Промо-фото">
+                                <img src="@img/projects/08.png" class="cover-image" alt="Промо-фото">
+                            </div>
+                            <div class="promo__slide swiper-slide">
+                                <img src="@img/projects/07.png" class="cover-image" alt="Промо-фото">
+                            </div>
+                            <div class="promo__slide swiper-slide">
+                                <img src="@img/projects/02.png" class="cover-image" alt="Промо-фото">
                             </div>
                         </div>
                     </div>
@@ -29,6 +35,48 @@
                                     <button type="button" class="promo__controls-next swiper-button-next"></button>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="portfolio">
+                    <div class="portfolio__container">
+                        <h2 class="portfolio__title title-lg">Портфолио</h2>
+                        <div class="portfolio__header">
+                            <div class="portfolio__filters">
+                                <label class="portfolio__filter">
+                                    <input type="radio" name="types" checked value="all" class="portfolio__filter-input hidden" hidden>
+                                    <span class="portfolio__filter-btn btn btn-sm">Все проекты</span>
+                                </label>
+                                <label class="portfolio__filter">
+                                    <input type="radio" name="types" value="architecture" class="portfolio__filter-input hidden" hidden>
+                                    <span class="portfolio__filter-btn btn btn-sm">Архитектура</span>
+                                </label>
+                                <label class="portfolio__filter">
+                                    <input type="radio" name="types" value="design" class="portfolio__filter-input hidden" hidden>
+                                    <span class="portfolio__filter-btn btn btn-sm">Дизайн</span>
+                                </label>
+                                <label class="portfolio__filter">
+                                    <input type="radio" name="types" value="public-spaces" class="portfolio__filter-input hidden" hidden>
+                                    <span class="portfolio__filter-btn btn btn-sm">Общественные пространства</span>
+                                </label>
+                            </div>
+                            <div class="portfolio__filters">
+                                <label class="portfolio__filter">
+                                    <input type="radio" name="categories" checked value="home" class="portfolio__filter-input hidden" hidden>
+                                    <span class="portfolio__filter-btn btn btn-sm">Дома</span>
+                                </label>
+                                <label class="portfolio__filter">
+                                    <input type="radio" name="categories" value="townhouses" class="portfolio__filter-input hidden" hidden>
+                                    <span class="portfolio__filter-btn btn btn-sm">Таунхаусы</span>
+                                </label>
+                                <label class="portfolio__filter">
+                                    <input type="radio" name="categories" value="apartments" class="portfolio__filter-input hidden" hidden>
+                                    <span class="portfolio__filter-btn btn btn-sm">Квартиры</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="portfolio__projects">
+                            @@include('html/templates/_project.html', {})
                         </div>
                     </div>
                 </section>

@@ -93,8 +93,7 @@ body {
 
 	@media (any-hover: hover) {
 		&:hover {
-			background: $white;
-			color: $brand-deep-tide;
+			background: rgba(255, 255, 255, 0.36);
 		}
 	}
 }

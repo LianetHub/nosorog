@@ -249,6 +249,7 @@
 }
 
 .btn {
+	cursor: pointer;
 	position: relative;
 	z-index: 1;
 	display: inline-flex;
@@ -263,6 +264,7 @@
 	&::before {
 		width: 1.25rem;
 		height: 1.25rem;
+		font-size: 1.25rem;
 		order: 1;
 		display: flex;
 		justify-content: center;
@@ -306,7 +308,7 @@
 
 		&:hover,
 		&:active {
-			background: $brand-deep-tide;
+			color: $brand-deep-tide;
 		}
 	}
 
