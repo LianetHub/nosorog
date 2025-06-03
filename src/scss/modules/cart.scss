@@ -46,7 +46,7 @@
 		transition: color 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				color: $accent;
+				color: $brand-deep-tide;
 			}
 		}
 	}
@@ -74,7 +74,7 @@
 		transition: color 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				color: $accent;
+				color: $brand-deep-tide;
 			}
 		}
 	}
@@ -132,7 +132,7 @@
 		align-items: center;
 		@media (any-hover: hover) {
 			&:hover {
-				color: $accent;
+				color: $brand-deep-tide;
 			}
 		}
 	}

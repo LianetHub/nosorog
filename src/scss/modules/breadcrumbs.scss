@@ -16,7 +16,7 @@
 				color: currentColor;
 				order: 1;
 				transform: rotate(-90deg);
-				@extend %ic, .icon-chevron;
+				@extend %ic, .icon-chevron-right;
 			}
 		}
 	}
@@ -25,7 +25,7 @@
 		transition: color 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				color: $accent;
+				color: $brand-deep-tide;
 			}
 		}
 		&.active {

@@ -32,7 +32,7 @@
 	width: 100%;
 	max-width: rem(670);
 	background: #fff;
-	color: $text;
+	color: $text-primary-black;
 	border-radius: rem(12);
 	padding: rem(30) rem(10);
 	@media (min-width: $md4) {
@@ -51,10 +51,10 @@
 		justify-content: center;
 		align-items: center;
 		transition: color 0.3s ease 0s;
-		color: $text;
+		color: $text-primary-black;
 		@media (any-hover: hover) {
 			&:hover {
-				color: $accent;
+				color: $brand-deep-tide;
 			}
 		}
 	}

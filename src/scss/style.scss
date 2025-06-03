@@ -11,12 +11,13 @@
 // ======================================ШРИФТЫ===============================================
 
 // Шрифт по умолчанию
-$fontfamily: "SuisseIntl";
+$fontfamily: "AeonikPro";
+$font-steppe: "Steppe";
 
 // Шрифт по умолчанию
 
 $md0: 1599.98px;
-$md1: 1419.98px;
+$md1: 1399.98px;
 $md2: 1279.98px;
 $md3: 991.98px;
 $md4: 767.98px;
@@ -27,19 +28,30 @@ $md6: 389.98px;
 
 $minWidth: 320; // Минимальная ширина страницы
 $maxWidth: 1920; // Ширина макета
-$maxWidthContainer: rem(1280); // Максимальная ширина ограничивающего контейнера
+$maxWidthContainer: rem(1352); // Максимальная ширина ограничивающего контейнера
 $containerPadding: 30;
 
 // ЦВЕТА
 
-$white: #fff;
-$text: #111827;
-$accent: #4d8a4a;
+$brand-sea-mist: #89c1bd;
+$text-overlay-white: #fff;
+$brand-deep-tide: #115268;
+$text-primary-black: #04181e;
+$text-secondary-grey: #516a72;
+$text-tertiary-grey: #94a3a8;
+$elements-primary: #115268;
+$elements-secondary: #ebebeb;
+$elements-primary-hover: #157291;
+$elements-secondary-hover: #cbdfe7;
+$elements-tertiary-overlay: #fff;
+$divider: #e4e4e4;
+$background-grey: #f8f8f8;
+$background-green: #dff4f2;
+$background-white: #fff;
+$elements-tertiary-overlay-transparent: rgba(255, 255, 255, 0.16);
+$background-dark: #062935;
 
-$green: #01ce22;
-$red: #fa0644;
-
-$shadow: rem(4) rem(4) rem(100) rgba(66, 114, 63, 0.15);
+$white: $background-grey;
 
 // Z-Index
 
@@ -64,7 +76,3 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 // СТИЛИ СТРАНИЦ
 
 @import "pages/home";
-@import "pages/about";
-@import "pages/reviews";
-@import "pages/purchase";
-@import "pages/pledge";

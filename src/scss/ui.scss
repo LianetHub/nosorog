@@ -40,13 +40,13 @@
 // 	}
 // 	@media (any-hover: hover) {
 // 		&:hover {
-// 			color: $accent;
+// 			color: $brand-deep-tide;
 // 		}
 // 	}
 // 	&.active {
 // 		&::before {
 // 			@extend %ic, .icon-heart-fill;
-// 			color: $accent;
+// 			color: $brand-deep-tide;
 // 			animation: pulse 0.3s ease-in-out;
 // 			@keyframes pulse {
 // 				0% {
@@ -88,7 +88,7 @@
 // 	}
 // 	@media (any-hover: hover) {
 // 		&:hover {
-// 			background-color: $text;
+// 			background-color: $text-primary-black;;
 // 			color: $white;
 // 		}
 // 	}
@@ -102,7 +102,7 @@
 //============ МОДУЛИ ====================
 
 .color-accent {
-	color: $accent;
+	color: $brand-deep-tide;
 }
 
 .fw-medium {
@@ -366,7 +366,7 @@
 
 // Стилизация скролла
 
-$scrollbarColor: #4d8a4a;
+$scrollbarColor: $brand-deep-tide;
 
 ::-webkit-scrollbar {
 	width: rem(8);
@@ -379,7 +379,7 @@ $scrollbarColor: #4d8a4a;
 	border-radius: rem(8);
 	@media (any-hover: hover) {
 		&:hover {
-			background: darken($color: $accent, $amount: 10);
+			background: darken($color: $brand-deep-tide, $amount: 10);
 		}
 	}
 }
