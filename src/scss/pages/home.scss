@@ -1,4 +1,70 @@
 .promo {
-	background: url("@img/promo/01.jpg") 0 0 / cover no-repeat;
-	min-height: rem(728);
+	position: relative;
+	color: $elements-tertiary-overlay;
+	background: rgba(0, 0, 0, 0.32);
+	z-index: 1;
+	// .promo__slider
+	&__slider {
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+		// display: none;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.32);
+			z-index: 2;
+		}
+	}
+	// .promo__slide
+	&__slide {
+	}
+	// .promo__body
+	&__body {
+		min-height: rem(728);
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		padding: 2.25rem 0;
+	}
+	// .promo__container
+	&__container {
+		width: 100%;
+	}
+	// .promo__title
+	&__title {
+	}
+	// .promo__subtitle
+	&__subtitle {
+	}
+	// .promo__bottom
+	&__bottom {
+		margin-top: 2rem;
+		padding-top: 3.5rem;
+		border-top: rem(1) solid $elements-tertiary-overlay-transparent;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	// .promo__btn
+	&__btn {
+	}
+	// .promo__controls
+	&__controls {
+		display: flex;
+		gap: 0.25rem;
+	}
+	// .promo__controls-prev
+	&__controls-prev {
+	}
+	// .promo__controls-next
+	&__controls-next {
+	}
 }

@@ -8,8 +8,28 @@
             @@include('html/_header.html', {})
             <main class="page">
                 <section class="promo">
-                    <div class="promo__container">
-
+                    <div class="promo__slider swiper">
+                        <div class="swiper-wrapper">
+                            <div class="promo__slide swiper-slide">
+                                <img src="@img/promo/01.jpg" class="cover-image" alt="Промо-фото">
+                            </div>
+                            <div class="promo__slide swiper-slide">
+                                <img src="@img/promo/01.jpg" class="cover-image" alt="Промо-фото">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="promo__body">
+                        <div class="promo__container">
+                            <h1 class="promo__title title">Дзайн проект интерьера твой мечты со скидкой 5%</h1>
+                            <p class="promo__subtitle">От идеи до реализации — с заботой о вашем комфорте</p>
+                            <div class="promo__bottom">
+                                <a href="" class="promo__btn btn btn-tertiary icon-emblem-up">Получить скидку</a>
+                                <div class="promo__controls">
+                                    <button type="button" class="promo__controls-prev swiper-button-prev"></button>
+                                    <button type="button" class="promo__controls-next swiper-button-next"></button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </main>

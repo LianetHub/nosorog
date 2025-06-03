@@ -311,29 +311,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    document.addEventListener('keydown', (e) => {
-
-        if (e.key === "Escape") {
-            if (document.querySelector('.search').classList.contains('active')) {
-                hideSearch()
-            }
-        }
-    });
-
-    document.querySelector('.search__form-input').addEventListener('blur', hideSearch)
-
-
-    function getSearch() {
-        document.querySelector('.search').classList.add('active');
-        setTimeout(() => {
-            document.querySelector('.search__form-input').focus();
-        }, 500)
-    }
-
-    function hideSearch() {
-        document.querySelector('.search').classList.remove('active');
-    }
-
     function getMenu() {
         document.querySelector('.header').classList.toggle('open-menu');
         toggleLocking();
@@ -371,15 +348,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (document.querySelector('.promo__slider')) {
         new Swiper('.promo__slider', {
-            slidesPerView: "auto",
-            spaceBetween: 16,
-            breakpoints: {
-                991.98: {
-                    slidesPerView: 3
+            slidesPerView: 1,
+            speed: 800,
+            loop: true,
+            autoplay: {
+                delay: 8000,
+                stopOnLastSlide: false,
+            },
+            // effect: "fade",
+            // fadeEffect: {
+            //     crossFade: true
+            // },
+
+            navigation: {
+                prevEl: '.promo__controls-prev',
+                nextEl: '.promo__controls-next'
+            },
+            on: {
+                init: (swiper) => {
+                    let speed = swiper.params.speed;
+                    let autoplaySpeed = swiper.params.autoplay.delay;
+                    swiper.navigation.nextEl.style.setProperty('--counting-speed', ((speed + autoplaySpeed) / 1000) + 's');
+                },
+                slideChangeTransitionStart: (swiper) => {
+                    const nextEl = swiper.navigation.nextEl;
+                    nextEl.classList.remove('counting');
+                    void nextEl.offsetWidth;
+                    nextEl.classList.add('counting');
                 }
             }
         })
     }
+
 
     if (document.querySelector('.cases__slider-block')) {
         new Swiper('.cases__slider-block', {
