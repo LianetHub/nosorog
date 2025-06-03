@@ -1,0 +1,35 @@
+.breadcrumbs {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 2.12rem;
+	// .breadcrumbs__item
+	&__item {
+		display: flex;
+		align-items: center;
+		color: #4b4b4b;
+		font-size: 1.125rem;
+		line-height: 140%;
+		&:not(:last-child) {
+			&::before {
+				margin: 0 0.5rem;
+				font-size: rem(4);
+				color: currentColor;
+				order: 1;
+				transform: rotate(-90deg);
+				@extend %ic, .icon-chevron;
+			}
+		}
+	}
+	// .breadcrumbs__link
+	&__link {
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $accent;
+			}
+		}
+		&.active {
+			pointer-events: none;
+		}
+	}
+}

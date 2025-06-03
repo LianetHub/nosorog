@@ -1,0 +1,409 @@
+.marked-text {
+	border-radius: 0.3125rem;
+	background: rgba(214, 223, 106, 0.5);
+	padding-inline: 0.25em;
+	margin-inline: -0.25em;
+	@media (min-width: $md1) {
+		white-space: nowrap;
+	}
+}
+
+.title {
+	font-weight: 500;
+	font-size: 1.75rem;
+	@media (min-width: $md4) {
+		font-size: 2.25rem;
+	}
+}
+
+.title-lg {
+	font-weight: 600;
+	font-size: 1.375rem;
+	@media (min-width: $md4) {
+		font-size: 2.75rem;
+	}
+}
+
+// .favorite-btn {
+// 	width: rem(30);
+// 	height: rem(30);
+// 	font-size: 1.25rem;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	flex-shrink: 0;
+// 	background: #fff;
+// 	border-radius: 50%;
+// 	&::before {
+// 		@extend %ic, .icon-heart;
+// 		transition: all 0.3s ease 0s;
+// 	}
+// 	@media (any-hover: hover) {
+// 		&:hover {
+// 			color: $accent;
+// 		}
+// 	}
+// 	&.active {
+// 		&::before {
+// 			@extend %ic, .icon-heart-fill;
+// 			color: $accent;
+// 			animation: pulse 0.3s ease-in-out;
+// 			@keyframes pulse {
+// 				0% {
+// 					transform: scale(1);
+// 				}
+// 				50% {
+// 					transform: scale(1.4);
+// 				}
+// 				100% {
+// 					transform: scale(1);
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+// .arrow-top-btn {
+// 	border-radius: rem(17);
+// 	bottom: 30%;
+// 	box-shadow: 0 rem(1) 1rem rgba(0, 0, 0, 0.13);
+// 	background: $white;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+
+// 	gap: 1rem;
+// 	padding: rem(6) rem(17) rem(10);
+// 	font-weight: 500;
+// 	position: fixed;
+// 	right: 0;
+// 	@media (min-width: $md4) {
+// 		right: 2%;
+// 	}
+// 	transform: rotate(90deg);
+// 	z-index: 99;
+// 	transition: background-color 0.3s ease, color 0.3s ease;
+// 	&::before {
+// 		margin-top: 0.35rem;
+// 	}
+// 	@media (any-hover: hover) {
+// 		&:hover {
+// 			background-color: $text;
+// 			color: $white;
+// 		}
+// 	}
+// }
+
+//============ МОДУЛИ ====================
+@import "modules/popup";
+@import "modules/range";
+@import "modules/breadcrumbs";
+
+//============ МОДУЛИ ====================
+
+.color-accent {
+	color: $accent;
+}
+
+.fw-medium {
+	font-weight: 500;
+}
+
+// .fw-bold {
+// 	font-weight: 700;
+// }
+
+// .text-center {
+// 	text-align: center;
+// }
+
+// .text-center-mobile {
+// 	@media (max-width: $md4) {
+// 		text-align: center;
+// 	}
+// }
+
+// .rate-label {
+// 	border-radius: 0.375rem;
+// 	background: $grey;
+// 	color: $white;
+// 	display: inline-flex;
+// 	align-items: center;
+// 	gap: 0.25rem;
+// 	padding: 0.25rem 0.375rem;
+// 	font-size: 0.875rem;
+// 	line-height: 100%;
+// 	&::before {
+// 		color: $orange;
+// 	}
+// }
+
+// .favorite-btn {
+// 	width: rem(40);
+// 	height: rem(40);
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	font-size: 1.5rem;
+// 	background: #f3f6fa;
+// 	border-radius: 50%;
+// 	flex-shrink: 0;
+// 	&::before {
+// 		@extend %ic, .icon-heart;
+// 		transition: all 0.3s ease 0s;
+// 	}
+// 	&.active {
+// 		&::before {
+// 			@extend %ic, .icon-heart-fill;
+// 			color: #82a6ca;
+// 			animation: pulse 0.3s ease-in-out;
+// 			@keyframes pulse {
+// 				0% {
+// 					transform: scale(1);
+// 				}
+// 				50% {
+// 					transform: scale(1.4);
+// 				}
+// 				100% {
+// 					transform: scale(1);
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+// .uppercase-mobile {
+// 	@media (max-width: $md4) {
+// 		text-transform: uppercase;
+// 	}
+// }
+
+// .desktop-only {
+// 	@media (max-width: $md2) {
+// 		display: none;
+// 	}
+// }
+
+// .mobile-only {
+// 	@media (min-width: $md4) {
+// 		display: none;
+// 	}
+// }
+
+// .tablet-only {
+// 	@media (min-width: $md2) {
+// 		display: none;
+// 	}
+// }
+
+// .pagination {
+// 	display: flex;
+// 	justify-content: center;
+// 	gap: 0.63rem;
+// 	// .pagination__btn
+// 	&__btn {
+// 		line-height: 1.6;
+// 		font-size: 1rem;
+// 		color: #fff;
+// 		@media (min-width: $md4) {
+// 			font-size: 1.125rem;
+// 			padding: 0.75rem 0.88rem;
+// 		}
+// 		&:first-child {
+// 			@media (min-width: $md4) {
+// 				margin-right: 1.87rem;
+// 			}
+// 			display: flex;
+// 			justify-content: center;
+// 			align-items: center;
+// 			&::before {
+// 				@extend %ic, .icon-chevron;
+
+// 				transform: rotate(180deg);
+// 			}
+// 		}
+// 		&:last-child {
+// 			display: flex;
+// 			justify-content: center;
+// 			align-items: center;
+// 			@media (min-width: $md4) {
+// 				margin-left: 1.87rem;
+// 			}
+// 			&::before {
+// 				@extend %ic, .icon-chevron;
+// 			}
+// 		}
+// 		transition: color 0.3s ease 0s;
+// 		color: #fff;
+// 		@media (min-width: $md4) {
+// 			color: #9aa2a9;
+// 		}
+// 		@media (any-hover: hover) {
+// 			&:hover {
+// 				color: #fff;
+// 			}
+// 		}
+// 		&::before {
+// 			@media (min-width: $md4) {
+// 				display: none;
+// 			}
+// 		}
+// 		& span {
+// 			display: none;
+// 			font-size: 1rem;
+// 			@media (min-width: $md4) {
+// 				display: block;
+// 			}
+// 		}
+// 		&[aria-disabled="true"] {
+// 			pointer-events: none;
+// 			color: #9aa2a9;
+// 		}
+// 	}
+// 	// .pagination__item
+// 	&__item {
+// 		justify-content: center;
+// 		align-items: center;
+// 		display: none;
+// 		width: 2.5rem;
+// 		height: 2.5rem;
+// 		font-size: 0.66575rem;
+// 		@media (min-width: $md4) {
+// 			width: 2.875rem;
+// 			height: 2.875rem;
+// 			font-size: 0.875rem;
+// 			display: flex;
+// 		}
+// 		@media (min-width: $md2) {
+// 			font-size: 1rem;
+// 			width: 3.5rem;
+// 			height: 3.5rem;
+// 		}
+// 		flex-shrink: 0;
+
+// 		border-radius: 50%;
+// 		border: 1px solid rgba($color: #fff, $alpha: 0.3);
+// 		color: #fff;
+// 		&[href] {
+// 			transition: border-color 0.3s ease 0s, background-color 0.3s ease 0s, color 0.3s ease 0s;
+// 			@media (any-hover: hover) {
+// 				&:hover {
+// 					border-color: #fff;
+// 					background: #fff;
+// 					color: $dark;
+// 				}
+// 			}
+// 		}
+// 		&.active {
+// 			border-color: #fff;
+// 			background: #fff;
+// 			color: $dark;
+// 			display: flex;
+// 			& + * {
+// 				display: flex;
+// 				& + * {
+// 					display: flex;
+// 				}
+// 			}
+// 			& ~ :nth-last-child(2),
+// 			& ~ :nth-last-child(3) {
+// 				display: flex;
+// 			}
+// 		}
+// 	}
+// }
+
+// ._loading {
+// 	color: transparent;
+// 	&::after {
+// 		content: "";
+// 		position: absolute;
+// 		top: 50%;
+// 		left: 50%;
+// 		transform: translate(-50%, -50%);
+// 		width: 20px;
+// 		height: 20px;
+// 		border: 3px solid #fff;
+// 		border-bottom-color: transparent;
+// 		border-radius: 50%;
+// 		transform-origin: center;
+// 		animation: rotation 1s linear infinite;
+// 		z-index: 3;
+// 	}
+// }
+
+// @keyframes rotation {
+// 	0% {
+// 		transform: translate(-50%, -50%) rotate(0deg);
+// 	}
+// 	100% {
+// 		transform: translate(-50%, -50%) rotate(360deg);
+// 	}
+// }
+
+//============ ОБЩИЕ ЭЛЕМЕНТЫ ============
+
+// Стилизация селекта
+// $selectBg: $orange;
+// $selectColor: $dark;
+
+// ::-moz-selection {
+// 	color: $selectColor;
+// 	background-color: $selectBg;
+// 	box-shadow: none;
+// }
+// ::selection {
+// 	color: $selectColor;
+// 	background-color: $selectBg;
+// 	-webkit-box-shadow: none;
+// 	box-shadow: none;
+// }
+// ::-moz-selection {
+// 	color: $selectColor;
+// 	background-color: $selectBg;
+// 	box-shadow: none;
+// }
+
+// Стилизация скролла
+
+$scrollbarColor: #4d8a4a;
+
+::-webkit-scrollbar {
+	width: rem(8);
+}
+::-webkit-scrollbar-track {
+	background: #fff;
+}
+::-webkit-scrollbar-thumb {
+	background: $scrollbarColor;
+	border-radius: rem(8);
+	@media (any-hover: hover) {
+		&:hover {
+			background: darken($color: $accent, $amount: 10);
+		}
+	}
+}
+
+//============ ОБЩИЕ ЭЛЕМЕНТЫ ============
+
+// ========== ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ ======
+.hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+
+.cover-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+// ========== ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ ======

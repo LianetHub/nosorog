@@ -1,0 +1,75 @@
+.dignity {
+	padding: rem(80) 0 rem(85);
+	background: #fffff8;
+	& + .article {
+		background: transparent;
+	}
+	& + .guarantees {
+		background: transparent;
+	}
+	// .dignity__container
+	&__container {
+	}
+	// .dignity__title
+	&__title {
+	}
+	// .dignity__subtitle
+	&__subtitle {
+		margin-top: rem(30);
+		max-width: 29rem;
+		color: #606060;
+		line-height: 140%;
+		font-size: 0.875rem;
+		@media (min-width: $md4) {
+			font-size: 1rem;
+		}
+	}
+	// .dignity__list
+	&__list {
+		margin-top: 2.81rem;
+		display: grid;
+		gap: 1.5rem;
+		@media (min-width: $md3) {
+			gap: 2.19rem;
+			row-gap: 2.94rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
+		@media (min-width: $md2) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+	// .dignity__item
+	&__item {
+		display: flex;
+		gap: 1rem;
+	}
+	// .dignity__item-icon
+	&__item-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 4.375rem;
+		height: 4.375rem;
+		padding: 0.6875rem;
+		border-radius: 50%;
+		background: #f9fae9;
+	}
+	// .dignity__item-body
+	&__item-body {
+	}
+	// .dignity__item-caption
+	&__item-caption {
+		color: #333;
+		font-size: 1.5rem;
+		font-weight: 600;
+		line-height: 140%;
+	}
+	// .dignity__item-desc
+	&__item-desc {
+		margin-top: 0.94rem;
+		color: #4b4b4b;
+		font-size: 1rem;
+		line-height: 140%;
+	}
+}

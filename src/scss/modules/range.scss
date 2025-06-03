@@ -1,0 +1,130 @@
+$rangeColor: #e0e0e0;
+$rangeHeight: 9;
+$rangeBorderRadius: 10;
+
+$thumbColor: #4d894a;
+$thumbSize: 30;
+$thumbBorderColor: rgba(#406f3d, 0.3);
+$thumbBorderSize: 0;
+
+$progress: #406f3d;
+
+@mixin thumb($size, $color, $border: false) {
+	width: rem($size);
+	height: rem($size);
+	background: $thumbColor;
+	@if ($border) {
+		border: rem($thumbBorderSize) solid $thumbBorderColor;
+	}
+}
+
+@mixin range($size, $color, $border: false, $radius: false) {
+	height: 9px;
+	background: $rangeColor;
+	@if ($border) {
+		border: rem($thumbBorderSize) solid $thumbBorderColor;
+	}
+	@if ($radius) {
+		border-radius: rem($rangeBorderRadius);
+	}
+}
+
+.range {
+	//.range__caption
+	&__caption {
+		position: relative;
+		z-index: 1;
+	}
+	//.range__input
+	&__input {
+		-webkit-appearance: none;
+		background-color: transparent;
+		padding: 0;
+		width: 100%;
+		opacity: 1;
+		&::-webkit-slider-thumb {
+			position: relative;
+			z-index: 1;
+			-webkit-appearance: none;
+			border-radius: 50%;
+			cursor: pointer;
+			@include thumb($thumbSize, $thumbColor, true);
+			margin-top: rem(-11);
+			box-shadow: inset 0 0 0 rem(9) #fff, 0 0 0 rem(3) rgba(#406f3d, 0.3);
+		}
+		&::-moz-range-thumb {
+			position: relative;
+			z-index: 1;
+			border-radius: 50%;
+			box-sizing: border-box;
+			cursor: pointer;
+			box-shadow: inset 0 0 0 rem(9) #fff, 0 0 0 rem(3) rgba(#406f3d, 0.3);
+			@include thumb($thumbSize, $thumbColor, true);
+		}
+		&::-ms-thumb {
+			position: relative;
+			z-index: 1;
+			display: inline-block;
+			border-radius: 50%;
+			border: 0;
+			cursor: pointer;
+			box-shadow: inset 0 0 0 rem(9) #fff, 0 0 0 rem(3) rgba(#406f3d, 0.3);
+			@include thumb($thumbSize, $thumbColor, true);
+			margin-top: 5px;
+		}
+		&::-webkit-slider-runnable-track {
+			border-color: transparent;
+			color: transparent;
+
+			@include range($rangeHeight, $rangeColor, false, true);
+			border-radius: $rangeBorderRadius;
+		}
+		&::-moz-range-track {
+			@include range($rangeHeight, $rangeColor, false, true);
+
+			border-radius: $rangeBorderRadius;
+		}
+		&::-ms-track {
+			border-color: transparent;
+			color: transparent;
+			@include range($rangeHeight, $rangeColor, false, true);
+			border-radius: $rangeBorderRadius;
+		}
+		&::-ms-fill-lower {
+			background: $progress;
+			border-radius: $rangeBorderRadius;
+		}
+		&::-moz-range-progress {
+			background: $progress;
+			height: rem($rangeHeight);
+			border: 0;
+			border-radius: rem($rangeBorderRadius);
+		}
+		&::-ms-tooltip {
+			display: none;
+		}
+		&:disabled {
+			cursor: default;
+			pointer-events: none;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			height: rem(9);
+			width: var(--precent, 0%);
+			border-radius: rem($rangeBorderRadius) 0 0 rem($rangeBorderRadius);
+			background: $progress;
+		}
+	}
+	// .range__list
+	&__list {
+		margin-top: 1rem;
+		display: flex;
+		justify-content: space-between;
+		color: #9299b5;
+		font-size: 1.11794rem;
+		font-weight: 400;
+	}
+}
