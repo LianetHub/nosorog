@@ -1379,33 +1379,3 @@ body {
   display: flex;
   gap: 0.25rem;
 }
-.promo__controls-next {
-  position: relative;
-}
-.promo__controls-next::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 0;
-  opacity: 0.32;
-  background: #fff;
-  transform: scale3d(0, 1, 1);
-  transform-origin: left;
-  will-change: transform;
-  z-index: -1;
-  display: block;
-}
-.promo__controls-next.counting::after {
-  animation: countingBar var(--counting-speed, 8.8s) linear forwards;
-}
-@keyframes countingBar {
-  0% {
-    transform: scale3d(0, 1, 1);
-  }
-  100% {
-    transform: scale3d(1, 1, 1);
-  }
-}
