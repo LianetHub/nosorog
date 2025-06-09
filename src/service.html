@@ -215,7 +215,50 @@
                         </ol>
                     </div>
                 </section>
-
+                @@include('./html/_callback.html')
+                <section class="team">
+                    <div class="team__container">
+                        <div class="team__header">
+                            <h2 class="team__title title">Команда Nosorog</h2>
+                            <div class="team__tabs">
+                                <button type="button" class="team__tabs-btn active">Дизайн и проектирование</button>
+                                <button type="button" class="team__tabs-btn">Строительство и отделка</button>
+                                <button type="button" class="team__tabs-btn">Инженерное проектирование</button>
+                            </div>
+                        </div>
+                        <div class="team__content">
+                            <div class="team__content-block active">
+                                <div class="team__body">
+                                    <div class="team__side">
+                                        <ul class="team__list">
+                                            <li class="team__item">
+                                                <div class="team__item-num">01</div>
+                                                <div class="team__item-title">Дизайнер</div>
+                                            </li>
+                                            <li class="team__item">
+                                                <div class="team__item-num">02</div>
+                                                <div class="team__item-title">Архитектор</div>
+                                            </li>
+                                            <li class="team__item">
+                                                <div class="team__item-num">03</div>
+                                                <div class="team__item-title">3D-визуализатор</div>
+                                            </li>
+                                            <li class="team__item">
+                                                <div class="team__item-num">04</div>
+                                                <div class="team__item-title">Менеджер проектов</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="team__slider swiper">
+                                        <div class="swiper-wrapper">
+                                            @@loop('./html/templates/_team-item.html', [])
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 @@include('./html/_faq.html')
                 @@include('./html/_banner.html')
             </main>
