@@ -80,6 +80,19 @@
                         </div>
                     </div>
                 </section>
+                <section class="prices">
+                    <div class="prices__container">
+                        <div class="prices__body">
+                            <div class="prices__main">
+                                <h2 class="prices__title">Стоимость услуг</h2>
+                                <p class="prices__subtitle">Наш новый проект сочетает в себе два противоположных стиля — лофт и нео-классику. Дом получился по‑настоящему необычным: в нем практически нет прямоугольных</p>
+                            </div>
+                            <div class="prices__cases">
+                                @@loop('./html/templates/_prices-case.html', './html/json/prices-cases-home.json')
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
             @@include('html/_footer.html', {})
             @@include('html/_modal.html', {})
