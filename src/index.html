@@ -157,6 +157,20 @@
                         </ul>
                     </div>
                 </section>
+                <section class="reviews">
+                    <div class="reviews__container">
+                        <h2 class="reviews__title title">Отзывы о нашей работе</h2>
+                        <div class="reviews__slider swiper">
+                            <div class="swiper-wrapper">
+                                @@loop('./html/templates/_review-slide.html', './html/json/reviews.json')
+                            </div>
+                            <div class="reviews__controls">
+                                <button type="button" class="reviews__prev swiper-button-prev"></button>
+                                <button type="button" class="reviews__next swiper-button-next"></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
             @@include('html/_footer.html', {})
             @@include('html/_modal.html', {})

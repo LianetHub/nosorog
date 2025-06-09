@@ -1,0 +1,29 @@
+<div class="review swiper-slide">
+    <div class="review__body">
+        <div class="review__rate">
+            <span class="review__rate-item icon-star"></span>
+            <span class="review__rate-item icon-star"></span>
+            <span class="review__rate-item icon-star"></span>
+            <span class="review__rate-item icon-star"></span>
+            <span class="review__rate-item icon-star"></span>
+        </div>
+        <h3 class="review__style">@@style</h3>
+        <blockquote class="review__quote">@@quote</blockquote>
+        <a href="" class="review__more">Показать польностью</a>
+        @@if(typeof gallery !== 'undefined') {
+        <div class="review__gallery">
+            @@for(var i = 0; i < gallery; i++) { <a href="`+gallery[i]+`" data-fancybox="review-gallery-@@id" class="review__gallery-item">
+                <img src="`+gallery[i]+`" alt="Фото проекта">
+                </a>}
+        </div>
+        }
+    </div>
+    <div class="review__side">
+        <div class="review__thumb">
+            <img src="@@thumb" alt="Фото автора">
+        </div>
+        <div class="review__name">@@name</div>
+        <time datetime="@@datetime" class="review__date">@@time</time>
+        <a href="" class="review__btn btn btn-tertiary icon-emblem-up">Посмотреть проект</a>
+    </div>
+</div>
