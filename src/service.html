@@ -7,7 +7,45 @@
         <div class="wrapper">
             @@include('html/_header.html', {})
             <main class="page">
-
+                <nav class="Навигация" class="breadcrumbs">
+                    <div class="breadcrumbs__container">
+                        <ul class="breadcrumbs__list">
+                            <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+                            <li class="breadcrumbs__item"><a class="breadcrumbs__link active">Дизайн интерьера квартиры</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <section class="service">
+                    <div class="service__container">
+                        <div class="service__body">
+                            <div class="service__main">
+                                <h1 class="service__title title">Дизайн интерьера квартиры в Ростове-на-Дону</h1>
+                                <p class="service__subtitle">Дизайн квартиры от 1000 ₽</p>
+                                <p class="service__desc">Создадим для вас проект квартиры, который мы сможем реализовать на 100% без вашего погружения, с учётом ваших пожеланий и всех требований к согласованию</p>
+                                <div class="service__btns">
+                                    <a href="" class="service__btn btn btn-primary icon-emblem-up">Расчитать стоимость</a>
+                                    <a href="" class="service__btn btn btn-secondary icon-emblem-up">Портфолио</a>
+                                </div>
+                            </div>
+                            <div class="service__slider swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="service__slide swiper-slide">
+                                        <img src="@img" alt="Фото проекта">
+                                    </div>
+                                </div>
+                                <div class="service__controls">
+                                    <button type="button" class="service__prev swiper-button-prev"></button>
+                                    <button type="button" class="service__next swiper-button-next"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="benefits">
+                    <div class="benefits__container">
+                        <h2 class="benefits__title title-sm">Вот, что мы предлагаем:</h2>
+                    </div>
+                </section>
                 <section class="prices">
                     <div class="prices__container">
                         <h2 class="prices__title">Стоимость дизайна квартиры</h2>
@@ -16,6 +54,7 @@
                         </div>
                     </div>
                 </section>
+                @@include('./html/_banner.html')
             </main>
             @@include('html/_footer.html', {})
             @@include('html/_modal.html', {})
