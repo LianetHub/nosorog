@@ -60,11 +60,7 @@
             Ростов-На-Дону
         </a>
         <div class="header__menu menu">
-            <button type="button" class="menu__icon icon-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+
             <nav class="menu__body">
                 <ul class="menu__list">
                     <li class="menu__item menu-parent">
@@ -127,8 +123,12 @@
                 </ul>
             </nav>
         </div>
-        <a href="tel:+79094399911" class="header__phone btn btn-secondary btn-sm icon-phone">+7 909 439-99-11</a>
+        <a href="tel:+79094399911" class="header__phone btn btn-secondary btn-sm icon-phone"><span>+7 909 439-99-11</span></a>
         <a href="" class="header__btn btn btn-primary btn-sm icon-emblem-up">Заказать проект</a>
+        <button type="button" class="header__menu-toggler icon-menu">
+            <span></span>
+            <span></span>
+        </button>
     </div>
 </header>
             <main class="page">
@@ -144,19 +144,19 @@
     <div class="contacts__container">
         
         
-        <h1 class="contacts__title title-xl">Контакты</h1>
+        <h1 class="contacts__title title-xl-desktop title-md">Контакты</h1>
         
         <div class="contacts__body">
             <div class="contacts__main">
                 <div class="contacts__blocks">
                     <div class="contacts__block">
                         <div class="contacts__caption">Приходите в гости:</div>
-                        <address class="contacts__address title-sm">344018, Россия, г. Ростов-на-Дону, пер. Крепостной, дом 123</address>
+                        <address class="contacts__address title-sm-desktop subtitle">344018, Россия, г. Ростов-на-Дону, пер. Крепостной, дом 123</address>
                     </div>
                     <div class="contacts__block">
                         <div class="contacts__caption">Свяжитесь с нами:</div>
-                        <a href="tel:+79094399911" class="contacts__link title-sm">+7 909 439-99-11</a>
-                        <a href="mailto:info@nosorog.ru" class="contacts__link title-sm">info@nosorog.ru</a>
+                        <a href="tel:+79094399911" class="contacts__link title-sm-desktop subtitle">+7 909 439-99-11</a>
+                        <a href="mailto:info@nosorog.ru" class="contacts__link title-sm-desktop subtitle">info@nosorog.ru</a>
                         <div class="contacts__worktime">Режим работы: ПН-ПТ 10:00–20:00</div>
                     </div>
                 </div>
@@ -226,8 +226,8 @@
                 </ul>
             </div>
             <form action="#" class="contacts__form">
-                <h3 class="contacts__form-title title-md">Обратная связь</h3>
-                <p class="contacts__form-subtitle subtitle">Оставьте контактные данные, и мы с вами свяжемся и ответим на все интересующие вопросы</p>
+                <h3 class="contacts__form-title title-md-desktop title-sm">Обратная связь</h3>
+                <p class="contacts__form-subtitle subtitle-desktop">Оставьте контактные данные, и мы с вами свяжемся и ответим на все интересующие вопросы</p>
                 <div class="contacts__form-fields">
                     <input type="text" name="name" class="form__control" placeholder="Имя">
                     <input type="tel" name="phone" class="form__control" placeholder="Номер телефона">
@@ -243,7 +243,7 @@
                 <section class="banner">
     <div class="banner__container">
         <div class="banner__content">
-            <h2 class="banner__title title-lg">Хотите получить подробную консультацию?</h2>
+            <h2 class="banner__title title-lg-desktop title-sm">Хотите получить подробную консультацию?</h2>
             <a href="" class="banner__btn btn btn-secondary icon-emblem-up">Оставить заявку</a>
         </div>
     </div>

@@ -1,5 +1,8 @@
 .contacts {
-	padding: 1.5rem 0 9rem;
+	padding: 1.5rem 0 5.5rem;
+	@media (min-width: $md2) {
+		padding: 1.5rem 0 9rem;
+	}
 	// .contacts__container
 	&__container {
 	}
@@ -8,10 +11,13 @@
 	}
 	// .contacts__body
 	&__body {
-		margin-top: 3rem;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 		border: rem(1) solid $divider;
+		margin-top: 2.25rem;
+		@media (min-width: $md3) {
+			margin-top: 3rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 	// .contacts__main
 	&__main {
@@ -21,15 +27,25 @@
 			content: "";
 			margin-top: auto;
 			width: 100%;
-			aspect-ratio: math.div(677, 153);
 			background-size: contain;
 			background-repeat: no-repeat;
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='677' height='153' viewBox='0 0 677 153' fill='none'%3E%3Cpath d='M671.243 153H676L339.439 1V153H338.25H335.871L0 1H676' stroke='%23E4E4E4'/%3E%3C/svg%3E");
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='328' height='98' viewBox='0 0 328 98' fill='none'%3E%3Cpath d='M325.692 97H328L164.698 1V97H164.121H162.967L0 1H328' stroke='%23E4E4E4'/%3E%3C/svg%3E");
+			aspect-ratio: math.div(328, 98);
+			@media (min-width: $md5) {
+				aspect-ratio: math.div(677, 153);
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='677' height='153' viewBox='0 0 677 153' fill='none'%3E%3Cpath d='M671.243 153H676L339.439 1V153H338.25H335.871L0 1H676' stroke='%23E4E4E4'/%3E%3C/svg%3E");
+			}
 		}
 	}
 	// .contacts__blocks
 	&__blocks {
-		padding: 2rem;
+		padding: 1rem;
+		@media (min-width: $md5) {
+			padding: 1.5rem;
+		}
+		@media (min-width: $md3) {
+			padding: 2rem;
+		}
 	}
 	// .contacts__block
 	&__block {
@@ -37,9 +53,16 @@
 		flex-direction: column;
 		align-items: flex-start;
 		&:not(:last-child) {
-			margin-bottom: 6rem;
+			margin-bottom: 1.5rem;
+			@media (min-width: $md4) {
+				margin-bottom: 4rem;
+			}
+			@media (min-width: $md2) {
+				margin-bottom: 6rem;
+			}
 		}
 	}
+
 	// .contacts__caption
 	&__caption {
 		color: $text-secondary-grey;
@@ -49,20 +72,38 @@
 	}
 	// .contacts__address
 	&__address {
+		letter-spacing: -0.01em;
 	}
 	// .contacts__link
 	&__link {
+		transition: color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $brand-sea-mist;
+			}
+		}
 		&:not(:last-child) {
 			margin-bottom: 0.5rem;
 		}
 	}
 	// .contacts__worktime
 	&__worktime {
-		line-height: 150%;
+		font-size: 0.875rem;
+		line-height: 157.143%;
+		@media (min-width: $md5) {
+			font-size: 1rem;
+			line-height: 150%;
+		}
 	}
 	// .contacts__map
 	&__map {
-		min-height: 35rem;
+		min-height: rem(400);
+		@media (min-width: $md4) {
+			min-height: 25rem;
+		}
+		@media (min-width: $md2) {
+			min-height: 35rem;
+		}
 		& iframe {
 			width: 100%;
 			height: 100%;
@@ -70,15 +111,19 @@
 	}
 	// .contacts__footer
 	&__footer {
-		margin-top: 3rem;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 		align-items: start;
-		gap: 3rem;
+		gap: 2.25rem;
+		margin-top: 2.25rem;
+		@media (min-width: $md3) {
+			margin-top: 3rem;
+			gap: 3rem;
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 	// .contacts__reqs
 	&__reqs {
-		padding: rem(36) 0;
+		padding: rem(36) 0 0.5rem;
 	}
 	// .contacts__reqs-title
 	&__reqs-title {
@@ -105,16 +150,30 @@
 	// .contacts__reqs-name
 	&__reqs-name {
 		color: $text-secondary-grey;
+		hyphens: auto;
+		@media (min-width: $md3) {
+			hyphens: none;
+		}
 	}
 	// .contacts__reqs-value
 	&__reqs-value {
 		text-align: right;
 		letter-spacing: -0.01em;
+		hyphens: auto;
+		@media (min-width: $md3) {
+			hyphens: none;
+		}
 	}
 	// .contacts__form
 	&__form {
 		background: $background-white;
-		padding: 2.25rem;
+		padding: 1rem;
+		@media (min-width: $md5) {
+			padding: 1.5rem;
+		}
+		@media (min-width: $md3) {
+			padding: 2.25rem;
+		}
 	}
 	// .contacts__form-title
 	&__form-title {
@@ -122,6 +181,7 @@
 	// .contacts__form-subtitle
 	&__form-subtitle {
 		margin-top: 1.5rem;
+		line-height: 150%;
 		color: $text-secondary-grey;
 	}
 	// .contacts__form-fields
