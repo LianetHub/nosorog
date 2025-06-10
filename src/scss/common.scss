@@ -134,6 +134,32 @@ body {
 	}
 }
 
+.banner {
+	padding: 4.5rem 0 0;
+
+	// .banner__container
+	&__container {
+	}
+	// .banner__content
+	&__content {
+		background-color: #062935;
+		color: $text-overlay-white;
+		padding: 4rem;
+		text-align: center;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1352' height='248' viewBox='0 0 1352 248' fill='none'%3E%3Cpath d='M1352 0L-0.999979 248M1352 0H675.5M1352 0V124M-0.999979 248H675.5M-0.999979 248V124M675.5 248H1352V124M675.5 248V0M675.5 248L1352 124M675.5 0H-0.999979V124M675.5 0L-0.999979 124M-0.999979 124H1352' stroke='white' stroke-opacity='0.16'/%3E%3C/svg%3E");
+		background-size: 100% auto;
+		background-repeat: repeat-y;
+		background-position: center;
+	}
+	// .banner__title
+	&__title {
+	}
+	// .banner__btn
+	&__btn {
+		margin-top: 1.5rem;
+	}
+}
+
 // .swiper-pagination {
 // 	margin-top: 2rem;
 // 	position: static;

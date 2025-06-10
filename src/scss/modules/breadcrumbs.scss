@@ -1,22 +1,30 @@
 .breadcrumbs {
-	display: flex;
-	flex-wrap: wrap;
-	padding-bottom: 2.12rem;
+	padding: 1.5rem 0;
+	// .breadcrumbs__list
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+		color: #94a3a8;
+		font-size: 0.875rem;
+		line-height: 114.286%;
+	}
 	// .breadcrumbs__item
 	&__item {
 		display: flex;
 		align-items: center;
-		color: #4b4b4b;
-		font-size: 1.125rem;
-		line-height: 140%;
+
 		&:not(:last-child) {
 			&::before {
-				margin: 0 0.5rem;
-				font-size: rem(4);
-				color: currentColor;
+				width: 1.5rem;
+				height: 1.5rem;
+				font-size: 1rem;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: $brand-sea-mist;
 				order: 1;
-				transform: rotate(-90deg);
-				@extend %ic, .icon-chevron-right;
+				@extend %ic, .icon-emblem-right;
 			}
 		}
 	}
@@ -25,10 +33,11 @@
 		transition: color 0.3s ease 0s;
 		@media (any-hover: hover) {
 			&:hover {
-				color: $brand-deep-tide;
+				color: $text-primary-black;
 			}
 		}
 		&.active {
+			color: #04181e;
 			pointer-events: none;
 		}
 	}

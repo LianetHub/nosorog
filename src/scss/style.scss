@@ -52,6 +52,7 @@ $elements-tertiary-overlay-transparent: rgba(255, 255, 255, 0.16);
 $background-dark: #062935;
 
 $white: $background-grey;
+$red: #da2800;
 
 // Z-Index
 
@@ -76,3 +77,4 @@ $ui-index-6: 6; // Для элементов, перекрывающих все
 // СТИЛИ СТРАНИЦ
 
 @import "pages/home";
+@import "pages/contacts";

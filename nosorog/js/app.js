@@ -299,15 +299,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-        if (target.matches('.article__full')) {
-            target.classList.toggle('active');
-            target.parentNode.classList.toggle('active');
-            if (target.classList.contains('active')) {
-                target.textContent = 'Скрыть';
-            } else {
-                target.textContent = 'Развернуть';
+        if (target.classList.contains('submenu__arrow')) {
+
+            let subsubMenu = target.nextElementSibling;
+
+            if (document.querySelector('.submenu__arrow.active') !== target) {
+
+                if (document.querySelector('.subsubmenu.open')) {
+                    document.querySelector('.subsubmenu.open').classList.remove('open');
+                }
+                if (document.querySelector('.submenu__arrow.active')) {
+                    document.querySelector('.submenu__arrow.active').classList.remove('active');
+                }
             }
+
+            subsubMenu.classList.toggle('open');
+            target.classList.toggle('active');
+
         }
+
+
     });
 
 
