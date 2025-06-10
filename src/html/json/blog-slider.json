@@ -1,6 +1,6 @@
 [
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/01.jpg",
         "categories": [
             "Строительство",
@@ -13,7 +13,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/02.jpg",
         "categories": [
             "Проектирование",
@@ -26,7 +26,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/03.jpg",
         "categories": [
             "Советы"
@@ -38,7 +38,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/04.jpg",
         "categories": [
             "Строительство"
@@ -50,7 +50,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/05.jpg",
         "categories": [
             "Строительство",
@@ -63,7 +63,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/06.jpg",
         "categories": [
             "Строительство",
@@ -76,7 +76,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/07.jpg",
         "categories": [
             "Строительство",
@@ -89,7 +89,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/08.jpg",
         "categories": [
             "Строительство",
@@ -102,7 +102,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/09.jpg",
         "categories": [
             "Строительство",
@@ -115,7 +115,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/10.jpg",
         "categories": [
             "Строительство",
@@ -128,7 +128,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/11.jpg",
         "categories": [
             "Строительство",
@@ -141,7 +141,7 @@
         "views": "1233"
     },
     {
-        "className": "",
+        "className": " swiper-slide",
         "image": "@img/blog/12.jpg",
         "categories": [
             "Строительство",

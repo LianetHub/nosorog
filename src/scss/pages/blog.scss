@@ -34,6 +34,9 @@
 		display: flex;
 		flex-direction: column;
 		border: rem(1) solid $divider;
+		&.swiper-slide {
+			height: auto;
+		}
 	}
 	// .blog__item-body
 	&__item-body {
@@ -131,5 +134,29 @@
 		margin-left: auto;
 		margin-right: auto;
 		display: flex;
+	}
+	// .blog__slider
+	&__slider {
+		margin-top: 2.25rem;
+		@media (min-width: $md5) {
+			margin-top: 2.75rem;
+		}
+	}
+	// .blog__controls
+	&__controls {
+		display: none;
+		@media (min-width: $md5) {
+			margin-top: 2.75rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 0.25rem;
+		}
+	}
+	// .blog__slider-prev
+	&__slider-prev {
+	}
+	// .blog__slider-next
+	&__slider-next {
 	}
 }

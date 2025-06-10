@@ -1,6 +1,5 @@
 "use strict";
 
-
 document.addEventListener("DOMContentLoaded", () => {
 
 
@@ -267,44 +266,62 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener('click', (e) => {
 
         const target = e.target;
-
-        if (target.classList.contains('search__btn')) {
-            if (document.querySelector('.search').classList.contains('active')) {
-                hideSearch()
-            } else {
-                getSearch()
-            }
-        }
+        const menu = document.querySelector('.header__menu');
+        const menuHeader = document.querySelector('.menu__header');
+        const menuLocation = document.querySelector('.menu__location');
+        const menuCaption = document.querySelector('.menu__caption');
 
         if (target.closest('.icon-menu') || target.classList.contains('menu__close')) {
             getMenu()
         }
 
+        // Handle first-level menu toggling
         if (target.classList.contains('menu__arrow')) {
-
             let subMenu = target.nextElementSibling;
+            const activeMenuItemText = target.previousElementSibling ? target.previousElementSibling.textContent : '';
 
             if (document.querySelector('.menu__arrow.active') !== target) {
-
                 if (document.querySelector('.submenu.open')) {
                     document.querySelector('.submenu.open').classList.remove('open');
                 }
                 if (document.querySelector('.menu__arrow.active')) {
                     document.querySelector('.menu__arrow.active').classList.remove('active');
                 }
+                if (document.querySelector('.subsubmenu.open')) {
+                    document.querySelector('.subsubmenu.open').classList.remove('open');
+                }
+                if (document.querySelector('.submenu__arrow.active')) {
+                    document.querySelector('.submenu__arrow.active').classList.remove('active');
+                }
+
+                toggleClassSafely(menu, 'second-menu-open', false);
             }
 
-            subMenu.classList.toggle('open');
+            if (subMenu) {
+                subMenu.classList.toggle('open');
+            }
             target.classList.toggle('active');
 
+
+            if (subMenu && subMenu.classList.contains('open')) {
+                toggleClassSafely(menuHeader, 'hidden', false);
+                toggleClassSafely(menuLocation, 'hidden');
+                setTextContentSafely(menuCaption, activeMenuItemText);
+                toggleClassSafely(menu, 'first-menu-open');
+            } else {
+                toggleClassSafely(menuHeader, 'hidden');
+                toggleClassSafely(menuLocation, 'hidden', false);
+                setTextContentSafely(menuCaption, '');
+                toggleClassSafely(menu, 'first-menu-open', false);
+            }
         }
 
+        // Handle second-level menu toggling
         if (target.classList.contains('submenu__arrow')) {
-
             let subsubMenu = target.nextElementSibling;
+            const activeSubMenuItemText = target.previousElementSibling ? target.previousElementSibling.textContent : '';
 
             if (document.querySelector('.submenu__arrow.active') !== target) {
-
                 if (document.querySelector('.subsubmenu.open')) {
                     document.querySelector('.subsubmenu.open').classList.remove('open');
                 }
@@ -313,14 +330,85 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            subsubMenu.classList.toggle('open');
+            if (subsubMenu) {
+                subsubMenu.classList.toggle('open');
+            }
             target.classList.toggle('active');
 
+
+            if (subsubMenu && subsubMenu.classList.contains('open')) {
+                setTextContentSafely(menuCaption, activeSubMenuItemText);
+                toggleClassSafely(menu, 'second-menu-open');
+            } else {
+
+                const parentMenuLink = target.closest('.submenu__item') ? target.closest('.submenu__item').querySelector('.submenu__link') : null;
+                if (parentMenuLink) {
+                    setTextContentSafely(menuCaption, parentMenuLink.textContent);
+                } else {
+
+                    const activeMenuArrow = document.querySelector('.menu__arrow.active');
+                    if (activeMenuArrow && activeMenuArrow.previousElementSibling) {
+                        setTextContentSafely(menuCaption, activeMenuArrow.previousElementSibling.textContent);
+                    }
+                }
+                toggleClassSafely(menu, 'second-menu-open', false);
+            }
+        }
+
+        // Handle the "Back" button click
+        if (target.classList.contains('menu__back')) {
+
+            const openSubSubmenu = document.querySelector('.subsubmenu.open');
+            if (openSubSubmenu) {
+                openSubSubmenu.classList.remove('open');
+                const activeSubmenuArrow = document.querySelector('.submenu__arrow.active');
+                if (activeSubmenuArrow) {
+                    activeSubmenuArrow.classList.remove('active');
+                }
+
+                const activeSubmenu = document.querySelector('.submenu.open');
+                if (activeSubmenu) {
+                    const parentMenuItemLink = activeSubmenu.closest('.menu__item') ? activeSubmenu.closest('.menu__item').querySelector('.menu__link') : null;
+                    setTextContentSafely(menuCaption, parentMenuItemLink ? parentMenuItemLink.textContent : '');
+                }
+                toggleClassSafely(menu, 'second-menu-open', false);
+            } else {
+
+                const openSubmenu = document.querySelector('.submenu.open');
+                if (openSubmenu) {
+                    openSubmenu.classList.remove('open');
+                    const activeMenuArrow = document.querySelector('.menu__arrow.active');
+                    if (activeMenuArrow) {
+                        activeMenuArrow.classList.remove('active');
+                    }
+                }
+
+
+                toggleClassSafely(menuHeader, 'hidden');
+                toggleClassSafely(menuLocation, 'hidden', false);
+                setTextContentSafely(menuCaption, '');
+                toggleClassSafely(menu, 'first-menu-open', false);
+            }
         }
 
 
     });
 
+    const toggleClassSafely = (element, className, add = true) => {
+        if (element) {
+            if (add) {
+                element.classList.add(className);
+            } else {
+                element.classList.remove(className);
+            }
+        }
+    };
+
+    const setTextContentSafely = (element, text) => {
+        if (element) {
+            element.textContent = text;
+        }
+    };
 
     function getMenu() {
         document.querySelector('.header').classList.toggle('open-menu');
@@ -402,6 +490,47 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    if (document.querySelector('.blog__slider')) {
+        new Swiper('.blog__slider', {
+            spaceBetween: 16,
+            loop: true, slidesPerView: 1.15,
+            autoplay: {
+                delay: 8000,
+                stopOnLastSlide: false,
+            },
+            navigation: {
+                nextEl: '.blog__slider-next',
+                prevEl: '.blog__slider-prev'
+            },
+            breakpoints: {
+
+                768: {
+                    slidesPerView: 2,
+                },
+                1279.98: {
+                    slidesPerView: 3,
+                },
+                1439.98: {
+                    slidesPerView: 4,
+                }
+            },
+            on: {
+                init: (swiper) => {
+                    const nextEl = swiper.navigation.nextEl;
+                    let speed = swiper.params.speed;
+                    let autoplaySpeed = swiper.params.autoplay.delay;
+                    nextEl.style.setProperty('--counting-speed', ((speed + autoplaySpeed) / 1000) + 's');
+                    nextEl.classList.add('counting');
+                },
+                slideChangeTransitionStart: (swiper) => {
+                    const nextEl = swiper.navigation.nextEl;
+                    nextEl.classList.remove('counting');
+                    void nextEl.offsetWidth;
+                    nextEl.classList.add('counting');
+                }
+            }
+        })
+    }
 
 
 

@@ -80,7 +80,15 @@ body {
 	align-items: center;
 	background: $elements-tertiary-overlay-transparent;
 	color: $white;
-
+	&.swiper-button-dark {
+		background: $elements-secondary;
+		color: $elements-primary;
+		@media (any-hover: hover) {
+			&:hover {
+				background: $elements-secondary-hover;
+			}
+		}
+	}
 	&:disabled,
 	&.swiper-button-disabled,
 	&[aria-disabled="true"] {
@@ -119,7 +127,12 @@ body {
 		z-index: -1;
 		display: block;
 	}
-
+	&.swiper-button-dark {
+		&::after {
+			opacity: 0.16;
+			background: $elements-primary;
+		}
+	}
 	&.counting::after {
 		animation: countingBar var(--counting-speed, 8.8s) linear forwards;
 	}
