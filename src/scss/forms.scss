@@ -202,6 +202,34 @@
 			color: $elements-primary;
 		}
 	}
+
+	&.filter-btn {
+		width: fit-content;
+		background: $white;
+		border: rem(1) solid $divider;
+		&:not(:last-child) {
+			border-right: 0;
+			border-right-color: $white;
+		}
+		&:not(:first-child) {
+			border-left: 0;
+			border-left-color: $white;
+		}
+		&:hover,
+		&:active,
+		&.active {
+			background: $elements-secondary;
+			color: $elements-primary-hover;
+		}
+	}
+}
+
+.filters {
+	// border: rem(1) solid $divider;
+	overflow: visible;
+	@media (min-width: $md4) {
+		max-width: 100%;
+	}
 }
 
 // .switcher {

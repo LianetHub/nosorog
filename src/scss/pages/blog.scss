@@ -1,0 +1,135 @@
+.blog {
+	padding: 1.5rem 0 5.5rem;
+	@media (min-width: $md3) {
+		padding: 1.5rem 0 9rem;
+	}
+	// .blog__container
+	&__container {
+	}
+	// .blog__subtitle
+	&__subtitle {
+		margin-top: 1.5rem;
+		line-height: 150%;
+	}
+	// .blog__filters
+	&__filters {
+		margin-top: 1.5rem;
+	}
+	// .blog__filter
+	&__filter {
+	}
+	// .blog__list
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(rem(326), 1fr));
+		gap: 1.5rem;
+		column-gap: rem(16);
+		margin-top: 2.25rem;
+		@media (min-width: $md5) {
+			margin-top: 3rem;
+		}
+	}
+	// .blog__item
+	&__item {
+		display: flex;
+		flex-direction: column;
+		border: rem(1) solid $divider;
+	}
+	// .blog__item-body
+	&__item-body {
+		flex: 1 1 auto;
+		padding: 1.5rem 1rem 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	// .blog__item-image
+	&__item-image {
+		aspect-ratio: math.div(20.375, 14.45969);
+		display: block;
+		position: relative;
+		overflow: hidden;
+		margin: rem(-1) rem(-1) 0;
+		& img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			transition: transform 0.3s ease;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				& img {
+					transform: scale(1.05);
+				}
+			}
+		}
+	}
+	// .blog__item-categories
+	&__item-categories {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.25rem;
+	}
+	// .blog__item-category
+	&__item-category {
+		color: $brand-deep-tide;
+		background: $elements-secondary;
+		padding: 0.375rem 0.5rem;
+		font-size: 0.875rem;
+		line-height: 114.286%;
+	}
+	// .blog__item-name
+	&__item-name {
+		transition: color 0.3s ease;
+		font-size: 1rem;
+		line-height: 150%;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $brand-sea-mist;
+			}
+		}
+	}
+	// .blog__item-desc
+	&__item-desc {
+		overflow: hidden;
+		color: $text-secondary-grey;
+		text-overflow: ellipsis;
+		font-size: 1rem;
+		line-height: 150%;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+	// .blog__item-stats
+	&__item-stats {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+	// .blog__item-stat
+	&__item-stat {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: $text-tertiary-grey;
+		font-size: 0.875rem;
+		line-height: 114.286%;
+		&::before {
+			display: flex;
+			width: 1rem;
+			height: 1rem;
+			justify-content: center;
+			align-items: center;
+			font-size: 1rem;
+			color: $brand-deep-tide;
+		}
+	}
+	// .blog__btn
+	&__btn {
+		margin-top: 1.5rem;
+		width: fit-content;
+		margin-left: auto;
+		margin-right: auto;
+		display: flex;
+	}
+}

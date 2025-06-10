@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Блог'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {})
+            <main class="page">
+                <nav aria-label="Навигация" class="breadcrumbs">
+                    <div class="breadcrumbs__container">
+                        <ul class="breadcrumbs__list">
+                            <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+                            <li class="breadcrumbs__item"><a class="breadcrumbs__link active">Блог</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <section class="blog">
+                    <div class="blog__container">
+                        <h1 class="title title-xl-desktop title-md">Полезные статьи</h1>
+                        <p class="blog__subtitle subtitle-desktop">Мы будем рады, если вы поделитесь своими впечатлениями о сотрудничестве с нами, чтобы мы становились лучше.</p>
+                        <div class="blog__filters filters swiper">
+                            <div class="swiper-wrapper">
+                                <a href="" class="swiper-slide filter-btn btn btn-sm active">Все</a>
+                                <a href="" class="swiper-slide filter-btn btn btn-sm">Строительство</a>
+                                <a href="" class="swiper-slide filter-btn btn btn-sm">Дизайн</a>
+                                <a href="" class="swiper-slide filter-btn btn btn-sm">Проектирование</a>
+                            </div>
+                        </div>
+                        <ul class="blog__list">
+                            @@loop('./html/templates/_blog-item.html', './html/json/blog.json')
+                        </ul>
+                        <a href="" class="blog__btn btn btn-secondary icon-emblem-down">Показать ещё</a>
+                    </div>
+                </section>
+                @@include('./html/_banner.html')
+            </main>
+            @@include('html/_footer.html', {})
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

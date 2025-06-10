@@ -108,11 +108,6 @@
 	}
 	// .portfolio__filter-btn
 	&__filter-btn {
-		&:hover,
-		&:active {
-			background: $elements-secondary;
-			color: $elements-primary-hover;
-		}
 	}
 	// .portfolio__projects
 	&__projects {

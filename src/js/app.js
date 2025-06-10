@@ -394,112 +394,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    if (document.querySelector('.cases__slider-block')) {
-        new Swiper('.cases__slider-block', {
-            spaceBetween: 15,
-            slidesPerView: 1,
-
-            watchSlidesProgress: true,
-            navigation: {
-                nextEl: ".cases__next",
-                prevEl: ".cases__prev"
-            },
-            // pagination: {
-            //     el: '.doctors__pagination',
-            //     clickable: true
-            // },
-            breakpoints: {
-                991.98: {
-                    slidesPerView: 2,
-                    spaceBetween: 18,
-                },
-            }
-        })
+    if (document.querySelectorAll('.filters').length > 0) {
+        document.querySelectorAll('.filters').forEach(filter => {
+            new Swiper(filter, {
+                slidesPerView: "auto",
+            })
+        });
     }
 
-
-    // range input
-    document.querySelectorAll('.range__input')?.forEach(sliderInput => {
-
-        const minValue = +sliderInput.min || 0;
-        const maxValue = +sliderInput.max || 100;
-
-        const updateSlider = () => {
-            const percent = Math.round(100 * (+sliderInput.value - minValue) / (maxValue - minValue));
-            sliderInput.style.setProperty('--precent', `${percent}%`);
-        }
-
-        sliderInput.addEventListener('input', () => {
-            updateSlider();
-        });
-
-        updateSlider();
-    });
-
-
-    // calc
-    document.querySelectorAll('.calc__form')?.forEach(calcForm => {
-        const calcType = calcForm.dataset.calc || 'invest';
-
-        const sumInput = calcForm.querySelector('input[name="sum"]');
-        const termInput = calcForm.querySelector('input[name="term"]');
-
-        const sumValue = calcForm.querySelector('.sum-value');
-        const termValue = calcForm.querySelector('.term-value');
-
-        const annualPercentText = calcForm.querySelector('.annual-value');
-        const annualPercent = parseFloat(annualPercentText.textContent) || 25;
-
-        const valueCurrent = calcForm.querySelector('.calc__form-total-value-current');
-        const valueOld = calcForm.querySelector('.calc__form-total-value-old');
-
-
-        function formatNumber(num) {
-            if (num >= 10_000_000) {
-                const rounded = (num / 1_000_000).toFixed(0);
-                return `${rounded} млн ₽`;
-            }
-            return num.toLocaleString('ru-RU').replace(/\s/g, '\u202F') + ' ₽';
-        }
-
-        function getYearText(n) {
-            if (n % 10 === 1 && n % 100 !== 11) return 'год';
-            if ([2, 3, 4].includes(n % 10) && ![12, 13, 14].includes(n % 100)) return 'года';
-            return 'лет';
-        }
-
-        function updateCalculation() {
-            const sum = parseInt(sumInput.value, 10);
-            const term = parseInt(termInput.value, 10);
-            const rate = annualPercent / 100;
-
-            sumValue.textContent = formatNumber(sum);
-            termValue.textContent = `${term} ${getYearText(term)}`;
-
-            if (calcType === 'loan') {
-                // === Расчёт для займа ===
-                const income = Math.round(sum * rate * term); // Проценты без капитализации
-                const oldIncome = Math.round(income * 2);     // Старая доходность, например в 2 раза больше
-
-                if (valueCurrent && valueOld) {
-                    valueCurrent.textContent = formatNumber(income);
-                    valueOld.textContent = formatNumber(oldIncome);
-                }
-            } else {
-                // === Расчёт для инвестиций ===
-                const income = Math.round(sum * Math.pow(1 + rate, term)) - sum;
-                const totalValue = calcForm.querySelector('.calc__form-total-value');
-                if (totalValue) {
-                    totalValue.textContent = formatNumber(income);
-                }
-            }
-        }
-
-        sumInput.addEventListener('input', updateCalculation);
-        termInput.addEventListener('input', updateCalculation);
-
-        updateCalculation();
-    });
 
 
 
