@@ -458,7 +458,6 @@ document.addEventListener("DOMContentLoaded", () => {
             fadeEffect: {
                 crossFade: true
             },
-
             navigation: {
                 prevEl: '.promo__controls-prev',
                 nextEl: '.promo__controls-next'
@@ -485,17 +484,22 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll('.project').forEach(project => {
 
             const mainSliderEl = project.querySelector('.project__slider');
-            const thumbsSliderEl = project.querySelector('.project__thumns'); // Corrected: select the thumbnail slider element
+            const thumbsSliderEl = project.querySelector('.project__thumbs'); // Corrected: select the thumbnail slider element
             const prevBtn = project.querySelector('.project__controls-prev');
             const nextBtn = project.querySelector('.project__controls-next')
 
 
             const thumbsSlider = new Swiper(thumbsSliderEl, {
                 spaceBetween: 5,
-                slidesPerView: "auto",
+                slidesPerView: 3,
                 freeMode: true,
                 loop: true,
                 watchSlidesProgress: true,
+                breakpoints: {
+                    1023.98: {
+                        slidesPerView: "auto",
+                    }
+                }
 
             });
 
@@ -534,6 +538,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
+    }
+
+    if (document.querySelectorAll('.prices__cases')) {
+        new Swiper('.prices__cases', {
+            slidesPerView: "auto",
+            spaceBetween: 16,
+            breakpoints: {
+                767.98: {
+                    spaceBetween: 8,
+                }
+            }
+        })
     }
 
     if (document.querySelectorAll('.filters').length > 0) {

@@ -70,10 +70,10 @@
 	}
 	// .footer__body
 	&__body {
-		grid-column: span 2;
 		display: grid;
 		gap: 2.25rem;
 		@media (min-width: $md5) {
+			grid-column: span 2;
 			grid-template-columns: repeat(2, 1fr);
 		}
 		@media (min-width: $md4) {

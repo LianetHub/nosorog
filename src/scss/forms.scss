@@ -2,7 +2,11 @@
 	// .form__row
 	&__row {
 		display: flex;
+		flex-direction: column;
 		gap: 0.5rem;
+		@media (min-width: $md5) {
+			flex-direction: row;
+		}
 	}
 
 	// .form__control
