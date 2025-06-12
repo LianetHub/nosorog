@@ -19,7 +19,7 @@
                     <div class="reviews__container">
                         <h1 class="reviews__title title-xl-desktop title-md ">Отзывы</h1>
                         <p class="reviews__subtitlte subtitle-desktop">Мы будем рады, если вы поделитесь своими впечатлениями о сотрудничестве с нами, чтобы мы становились лучше</p>
-                        <a href="" class="reviews__btn btn btn-primary icon-emblem-up">Написать отзыв</a>
+                        <a href="#add-review" data-fancybox class="reviews__btn btn btn-primary icon-emblem-up">Написать отзыв</a>
                         <div class="reviews__body">
                             @@loop('./html/templates/_review-slide.html', './html/json/reviews-list.json')
                         </div>
@@ -30,6 +30,7 @@
             </main>
             @@include('html/_footer.html', {})
             @@include('html/_modal.html', {})
+            @@include('html/_modal-reviews.html', {})
             @@include('html/_js.html', {})
         </div>
     </body>

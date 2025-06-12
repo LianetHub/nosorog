@@ -1,29 +1,28 @@
 <div id="callback" class="popup">
-    <button type="button" data-fancybox-close class="popup__close icon-close"></button>
-    <h2 class="popup__title title">Запиcаться на прием</h2>
-    <form action="#" class="popup__form form">
-        <div class="form__field">
-            <label for="callback-name">Ваше имя</label>
-            <input type="text" name="name" id="callback-name" class="form__control" placeholder="Введите имя">
-        </div>
-        <div class="form__field">
-            <label for="callback-phone">Телефон</label>
-            <input type="tel" name="phone" id="callback-phone" class="form__control" placeholder="+7 ___ ___-__-__">
-        </div>
-        <div class="form__field">
-            <label for="callback-message">Вопрос</label>
-            <textarea name="message" id="callback-message" class="form__control" placeholder="Опишите Ваш вопрос"></textarea>
-        </div>
-        <label class="form__checkbox">
-            <input type="checkbox" name="not-call" class="form__checkbox-input hidden" hidden>
-            <span class="form__checkbox-text">Нажимая на кнопку, вы даете согласие на обработку <a href="">персональных данных</a></span>
-        </label>
-        <div class="form__footer">
-            <button type="submit" class="form__btn btn btn-primary btn-lg icon-phone">Отправить заявку</button>
-            <div class="form__socials">
-                <a href="" class="form__social icon-whatsapp"></a>
-                <a href="" class="form__social icon-telegram"></a>
+    <button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+    <div class="popup__body">
+        <h2 class="popup__title title-md-desktop title-sm">Обсудим ваш проект?</h2>
+        <p class="popup__subtitle subtitle-desktop">Подробно ответим на вопросы, и проконсультируем по выбору индивидуального решения</p>
+        <form action="#" class="popup__form form">
+            <input type="tel" name="phone" class="form__control" placeholder="Номер телефона">
+            <button type="submit" class="form__btn btn btn-secondary icon-emblem-up">Заказать звонок</button>
+            <div class="form__privacy">
+                Отправляя данную форму вы соглашаетесь с <a href="">политикой обработки персональных данных</a>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
+</div>
+<div id="success-submit" class="popup">
+    <button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+    <div class="popup__body text-center">
+        <h2 class="popup__title title-md-desktop title-sm">Спасибо за заявку</h2>
+        <p class="popup__subtitle subtitle-desktop">Менеджер свяжется с вами в течении 15 минут</p>
+    </div>
+</div>
+<div id="error-submit" class="popup">
+    <button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+    <div class="popup__body text-center">
+        <h2 class="popup__title title-md-desktop title-sm">Упс, что-то пошло не так</h2>
+        <p class="popup__subtitle subtitle-desktop">Пожалуйста, повторите попытку позже</p>
+    </div>
 </div>

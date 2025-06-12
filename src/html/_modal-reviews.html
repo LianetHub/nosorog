@@ -1,0 +1,41 @@
+<div id="add-review" class="popup">
+    <button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+    <div class="popup__body">
+        <h2 class="popup__title title-md-desktop title-sm">Написать отзыв</h2>
+        <form action="#" class="popup__form form">
+            <div class="form__label">Оценка</div>
+            <div class="star-rating">
+                <input type="radio" name="rate" id="rate-5" value="5" class="star-rating__input hidden" hidden>
+                <label class="star-rating__label" for="rate-5"></label>
+                <input type="radio" name="rate" id="rate-4" value="4" class="star-rating__input hidden" hidden>
+                <label class="star-rating__label" for="rate-4"></label>
+                <input type="radio" name="rate" id="rate-3" value="3" class="star-rating__input hidden" hidden>
+                <label class="star-rating__label" for="rate-3"></label>
+                <input type="radio" name="rate" id="rate-2" value="2" class="star-rating__input hidden" hidden>
+                <label class="star-rating__label" for="rate-2"></label>
+                <input type="radio" name="rate" id="rate-1" value="1" class="star-rating__input hidden" hidden>
+                <label class="star-rating__label" for="rate-1"></label>
+            </div>
+            <input type="tel" name="phone" class="form__control" placeholder="Номер телефона">
+            <textarea name="text" class="form__control" placeholder="Текст отзыва"></textarea>
+            <button type="submit" class="form__btn btn btn-secondary icon-emblem-up">Отправить</button>
+            <div class="form__privacy">
+                Отправляя данную форму вы соглашаетесь с <a href="">политикой обработки персональных данных</a>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="review-success-submit" class="popup">
+    <button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+    <div class="popup__body text-center">
+        <h2 class="popup__title title-md-desktop title-sm">Спасибо за отзыв!</h2>
+        <p class="popup__subtitle subtitle-desktop">Ваш отзыв отправлен на проверку. После проверки модератором — он будет опубликован.</p>
+    </div>
+</div>
+<div id="review-error-submit" class="popup">
+    <button type="button" data-fancybox-close class="popup__close icon-cross"></button>
+    <div class="popup__body text-center">
+        <h2 class="popup__title title-md-desktop title-sm">Упс, что-то пошло не так</h2>
+        <p class="popup__subtitle subtitle-desktop">Пожалуйста, повторите попытку позже</p>
+    </div>
+</div>

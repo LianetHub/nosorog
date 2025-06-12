@@ -1,4 +1,9 @@
 .form {
+	&__label {
+		color: $text-secondary-grey;
+		font-size: 1rem;
+		line-height: 125%;
+	}
 	// .form__row
 	&__row {
 		display: flex;
@@ -219,6 +224,7 @@
 	&[aria-disabled="true"] {
 		background: $elements-secondary;
 		color: $text-tertiary-grey;
+		pointer-events: none;
 		&::before {
 			color: $elements-primary;
 		}
