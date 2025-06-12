@@ -544,11 +544,6 @@ document.addEventListener("DOMContentLoaded", () => {
         new Swiper('.prices__cases', {
             slidesPerView: "auto",
             spaceBetween: 16,
-            breakpoints: {
-                767.98: {
-                    spaceBetween: 8,
-                }
-            }
         })
     }
 
@@ -591,6 +586,50 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    if (document.querySelector('.service__slider')) {
+        new Swiper('.service__slider', {
+            slidesPerView: 1,
+            speed: 800,
+            loop: true,
+            autoplay: {
+                delay: 8000,
+                stopOnLastSlide: false,
+            },
+            navigation: {
+                prevEl: '.service__prev',
+                nextEl: '.service__next'
+            },
+            on: {
+                init: (swiper) => {
+                    const nextEl = swiper.navigation.nextEl;
+                    let speed = swiper.params.speed;
+                    let autoplaySpeed = swiper.params.autoplay.delay;
+                    nextEl.style.setProperty('--counting-speed', ((speed + autoplaySpeed) / 1000) + 's');
+                    nextEl.classList.add('counting');
+                },
+                slideChangeTransitionStart: (swiper) => {
+                    const nextEl = swiper.navigation.nextEl;
+                    nextEl.classList.remove('counting');
+                    void nextEl.offsetWidth;
+                    nextEl.classList.add('counting');
+                }
+            }
+        })
+    }
+
+    if (document.querySelector('.options__slider')) {
+        getMobileSlider('.options__slider', {
+            slidesPerView: "auto",
+            spaceBetween: 16
+        })
+    }
+
+    if (document.querySelector('.portfolio__slider')) {
+        new Swiper('.portfolio__slider', {
+            slidesPerView: 3,
+            spaceBetween: 24
+        })
+    }
 
     if (document.querySelector('.blog__slider')) {
         new Swiper('.blog__slider', {
@@ -635,6 +674,167 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+    function getMobileSlider(sliderName, options) {
+
+        let init = false;
+        let swiper = null;
+
+        function getSwiper() {
+            if (window.innerWidth <= 1023.98) {
+                if (!init) {
+                    init = true;
+                    swiper = new Swiper(sliderName, options);
+                }
+            } else if (init) {
+                swiper.destroy();
+                swiper = null;
+                init = false;
+            }
+        }
+        getSwiper();
+        window.addEventListener("resize", getSwiper);
+    }
+
+
+    // range input
+    document.querySelectorAll('.range__input')?.forEach(sliderInput => {
+
+        const outputElement = sliderInput.closest('.range')?.querySelector('.range__output');
+
+
+        const minValue = +sliderInput.min || 0;
+        const maxValue = +sliderInput.max || 100;
+
+        const updateSlider = () => {
+
+            const percent = Math.round(100 * (+sliderInput.value - minValue) / (maxValue - minValue));
+            sliderInput.style.setProperty('--precent', `${percent}%`);
+
+
+            if (outputElement) {
+                outputElement.textContent = `${sliderInput.value}`;
+            }
+        }
+
+        sliderInput.addEventListener('input', () => {
+            updateSlider();
+        });
+
+        updateSlider();
+    })
+
+
+    // quiz
+    if (document.querySelector('.quiz')) {
+        const quizForm = document.querySelector('.quiz__form');
+        const quizSteps = document.querySelectorAll('.quiz__step');
+        const progressBar = document.querySelector('.quiz__progress-bar');
+        const progressPercent = document.querySelector('.quiz__progress-precent');
+        const areaRangeInput = document.querySelector('.range__input[name="area"]');
+        const areaOutput = document.querySelector('.range__output');
+
+        let currentStep = 0;
+
+        if (areaRangeInput && areaOutput) {
+            areaOutput.textContent = areaRangeInput.value;
+        }
+
+        const updateProgress = () => {
+            const totalSteps = quizSteps.length - 1;
+            const completedSteps = currentStep;
+            const progressValue = (completedSteps / totalSteps) * 100;
+            progressBar.value = progressValue;
+            progressPercent.textContent = `${Math.round(progressValue)}%`;
+        };
+
+        const showStep = (stepIndex) => {
+            quizSteps.forEach((step, index) => {
+                if (index === stepIndex) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+            currentStep = stepIndex;
+            updateProgress();
+        };
+
+        quizForm.querySelectorAll('[data-next-step]').forEach(button => {
+            button.addEventListener('click', () => {
+                if (currentStep === 0) {
+                    const selectedRate = quizForm.querySelector('input[name="rate"]:checked');
+                    if (!selectedRate) {
+                        alert('Пожалуйста, выберите тариф.');
+                        return;
+                    }
+                } else if (currentStep === 1) {
+                    const selectedRooms = quizForm.querySelectorAll('input[name="room_type"]:checked');
+                    if (selectedRooms.length === 0) {
+                        alert('Пожалуйста, выберите хотя бы одно помещение.');
+                        return;
+                    }
+                } else if (currentStep === 2) {
+                    const selectedStyle = quizForm.querySelector('input[name="interior_style"]:checked');
+                    if (!selectedStyle) {
+                        alert('Пожалуйста, выберите стиль интерьера.');
+                        return;
+                    }
+                } else if (currentStep === 3) {
+                    const phoneInput = document.getElementById('quiz-phone');
+                    if (!phoneInput.value.trim()) {
+                        alert('Пожалуйста, введите ваш номер телефона.');
+                        return;
+                    }
+                }
+
+                if (currentStep < quizSteps.length - 1) {
+                    showStep(currentStep + 1);
+                }
+            });
+        });
+
+        quizForm.querySelectorAll('[data-prev-step]').forEach(button => {
+            button.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    showStep(currentStep - 1);
+                }
+            });
+        });
+
+        if (areaRangeInput && areaOutput) {
+            areaRangeInput.addEventListener('input', () => {
+                areaOutput.textContent = areaRangeInput.value;
+            });
+        }
+
+        // Эмитация отправки формы
+        quizForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(quizForm);
+            const data = {};
+            for (let [key, value] of formData.entries()) {
+                if (key === 'room_type') {
+                    if (!data[key]) {
+                        data[key] = [];
+                    }
+                    data[key].push(value);
+                } else {
+                    data[key] = value;
+                }
+            }
+            console.log('Quiz data submitted:', data);
+
+            setTimeout(() => {
+                showStep(quizSteps.length - 1);
+                quizForm.reset();
+                progressBar.value = 100;
+                progressPercent.textContent = '100%';
+            }, 500);
+        });
+
+        showStep(0);
+    }
 
 
 });

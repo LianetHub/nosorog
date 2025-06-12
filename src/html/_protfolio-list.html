@@ -1,0 +1,37 @@
+<section class="portfolio">
+    <div class="portfolio__container">
+        <h2 class="portfolio__title title-xl-desktop title-lg">Портфолио выполненных работ</h2>
+        <div class="portfolio__header">
+            <div class="portfolio__filters filters swiper">
+                <div class="swiper-wrapper">
+                    <a href="" class="swiper-slide filter-btn btn btn-sm active">Все проекты</a>
+                    <a href="" class="swiper-slide filter-btn btn btn-sm">Архитектура</a>
+                    <a href="" class="swiper-slide filter-btn btn btn-sm">Дизайн</a>
+                    <a href="" class="swiper-slide filter-btn btn btn-sm">Общественные пространства</a>
+                </div>
+            </div>
+            <div class="portfolio__filters filters swiper">
+                <div class="swiper-wrapper">
+                    <a href="" class="swiper-slide filter-btn btn btn-sm active">Дома</a>
+                    <a href="" class="swiper-slide filter-btn btn btn-sm">Таунхаусы</a>
+                    <a href="" class="swiper-slide filter-btn btn btn-sm">Квартиры</a>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio__list">
+            @@include('html/templates/_project.html', {
+            "init": "02",
+            "className": " project--column"
+            })
+            @@include('html/templates/_project.html', {
+            "init": "03",
+            "className": " project--column"
+            })
+            @@include('html/templates/_project.html', {
+            "init": "04",
+            "className": " project--column"
+            })
+        </div>
+        <a href="" class="portfolio__more btn btn-secondary icon-emblem-up">Показать ещё</a>
+    </div>
+</section>

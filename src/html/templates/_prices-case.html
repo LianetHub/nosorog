@@ -7,5 +7,10 @@
     <ul class="prices__case-list">
         @@for(var i = 0; i < list.length; i++) { <li>`+list[i]+`</li>}
     </ul>
+    @@if (className == " swiper-slide") {
     <a href="" class="prices__case-btn btn btn-primary icon-emblem-up">@@btn</a>
+    }
+    @@if (className !== " swiper-slide") {
+    <a href="" class="prices__case-btn btn btn-tertiary icon-emblem-up">@@btn</a>
+    }
 </div>

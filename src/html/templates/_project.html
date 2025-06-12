@@ -1,4 +1,4 @@
-<div class="project">
+<div class="project@@if(typeof className !== 'undefined'){ @@className}">
     <div class="project__slider swiper">
         <div class="swiper-wrapper">
             <div class="project__slide swiper-slide">
@@ -23,6 +23,12 @@
                 <img src="@img/projects/08.png" class="cover-image" alt="Фото проекта">
             </div>
         </div>
+        @@if(typeof className !== 'undefined'){
+        <div class="project__controls">
+            <button type="button" class="project__controls-prev swiper-button-prev"></button>
+            <button type="button" class="project__controls-next swiper-button-next"></button>
+        </div>
+        }
     </div>
     <div class="project__body">
         <div class="project__tags">
@@ -56,14 +62,17 @@
                     </div>
                 </div>
             </div>
+            @@if(typeof className == 'undefined'){
             <div class="project__controls">
                 <button type="button" class="project__controls-prev swiper-button-prev"></button>
                 <button type="button" class="project__controls-next swiper-button-next"></button>
             </div>
+            }
         </div>
     </div>
     <div class="project__side">
-        <h3 class="project__title title-sm-desktop subtitle">Строительство дома «под ключ» Проект «Ривьера House»</h3>
+
+        <h3 class="project__title@@if(typeof className == 'undefined'){ title-sm-desktop} subtitle"><a href="">Строительство дома «под ключ» Проект «Ривьера House»</a></h3>
         <p class="project__desc">Наш новый проект сочетает в себе два противоположных стиля — лофт и нео-классику. Дом получился по-настоящему необычным: в нем практически нет прямоугольных</p>
         <a href="" class="project__btn btn icon-emblem-up">Перейти к проекту</a>
     </div>

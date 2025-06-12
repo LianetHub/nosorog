@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Страница услуги дочерняя'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {})
+            <main class="page">
+                <nav aria-label="Навигация" class="breadcrumbs">
+                    <div class="breadcrumbs__container">
+                        <ul class="breadcrumbs__list">
+                            <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+                            <li class="breadcrumbs__item"><a href="/service.html" class="breadcrumbs__link">Дизайн интерьера</a></li>
+                            <li class="breadcrumbs__item"><a class="breadcrumbs__link active">Дизайн однокомнатной квартиры</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <section class="service">
+                    <div class="service__container">
+                        <div class="service__body">
+                            <div class="service__main">
+                                <h1 class="service__title title-lg-desktop title-md">Дизайн интерьера квартиры в Ростове-на-Дону</h1>
+                                <p class="service__subtitle subtitle-desktop">Дизайн квартиры от 1000 ₽</p>
+                                <p class="service__desc">Создадим для вас проект квартиры, который мы сможем реализовать на 100% без вашего погружения, с учётом ваших пожеланий и всех требований к согласованию</p>
+                                <div class="service__btns">
+                                    <a href="" class="service__btn btn btn-primary icon-emblem-up">Расчитать стоимость</a>
+                                    <a href="" class="service__btn btn btn-secondary icon-emblem-up">Портфолио</a>
+                                </div>
+                            </div>
+                            <div class="service__gallery">
+                                <div class="service__slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="service__slide swiper-slide">
+                                            <img src="@img/projects/10.jpg" class="cover-image" alt="Фото проекта">
+                                        </div>
+                                        <div class="service__slide swiper-slide">
+                                            <img src="@img/projects/10.jpg" class="cover-image" alt="Фото проекта">
+                                        </div>
+                                        <div class="service__slide swiper-slide">
+                                            <img src="@img/projects/10.jpg" class="cover-image" alt="Фото проекта">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service__controls">
+                                    <button type="button" class="service__prev swiper-button-prev"></button>
+                                    <button type="button" class="service__next swiper-button-next"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="design">
+                    <div class="design__container">
+                        <div class="design__body">
+                            <div class="design__image">
+                                <img src="@img/service-2.jpg" class="cover-image" alt="Фото дизайна">
+                            </div>
+                            <div class="design__content">
+                                <h2 class="design__title title-lg-desktop title-sm">Дизайн однокомнатной квартиры</h2>
+                                <div class="design__logo">
+                                    <img src="@img/logo.svg" alt="Логотип">
+                                </div>
+                                <div class="design__info">
+                                    <h3 class="design__caption title-sm-desktop  subtitle">Однокомнатная квартира — это не просто жильё, это ваш личный уголок, где каждая деталь должна быть продумана до мелочей.</h3>
+                                    <p class="design__why">Студия дизайна Носорог предлагает профессиональные решения для создания стильного и функционального интерьера, который будет отражать ваш характер и образ жизни.</p>
+                                    <p class="design__desc">Мы понимаем, что ограниченное пространство требует особого подхода. Наши дизайнеры разработают проект, который визуально расширит квартиру, сделает её уютной и удобной для жизни. От зонирования пространства до подбора мебели и освещения — мы учтём все нюансы, чтобы вы получили идеальный результат.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="features">
+                    <div class="features__container">
+                        <h2 class="features__title title-sm">Особености дизайна однокомнатной квартиры</h2>
+                        <ul class="features__list">
+                            <li class="features__item">
+                                <div class="features__item-icon">
+                                    <img src="@img/icons/features-deal.svg" alt="Иконка">
+                                </div>
+                                <div class="features__item-body">
+                                    <h3 class="features__item-caption subtitle">Эргономика</h3>
+                                    <p class="features__item-desc">Каждый квадратный метр используется с максимальной пользой</p>
+                                </div>
+                            </li>
+                            <li class="features__item">
+                                <div class="features__item-icon">
+                                    <img src="@img/icons/features-team.svg" alt="Иконка">
+                                </div>
+                                <div class="features__item-body">
+                                    <h3 class="features__item-caption subtitle">Многофункциональность</h3>
+                                    <p class="features__item-desc">Мебель-трансформер и встроенные системы хранения экономят место</p>
+                                </div>
+                            </li>
+                            <li class="features__item">
+                                <div class="features__item-icon">
+                                    <img src="@img/icons/features-shield.svg" alt="Иконка">
+                                </div>
+                                <div class="features__item-body">
+                                    <h3 class="features__item-caption subtitle">Акценты</h3>
+                                    <p class="features__item-desc">Яркие детали добавляют интерьеру индивидуальности</p>
+                                </div>
+                            </li>
+                            <li class="features__item">
+                                <div class="features__item-icon">
+                                    <img src="@img/icons/features-3d.svg" alt="Иконка">
+                                </div>
+                                <div class="features__item-body">
+                                    <h3 class="features__item-caption subtitle">Комфорт</h3>
+                                    <p class="features__item-desc">Удобная планировка и продуманное освещение создают атмосферу уюта.</p>
+                                </div>
+                            </li>
+                            <li class="features__item">
+                                <div class="features__item-icon">
+                                    <img src="@img/icons/features-planning.svg" alt="Иконка">
+                                </div>
+                                <div class="features__item-body">
+                                    <h3 class="features__item-caption subtitle">Светлые тона</h3>
+                                    <p class="features__item-desc">Пастельные оттенки и глянцевые поверхности визуально расширяют пространство</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="prices">
+                    <div class="prices__container">
+                        <h2 class="prices__title title-xl-desktop title-md">Стоимость дизайна однокомнатной квартиры</h2>
+                        <div class="prices__cases swiper">
+                            <div class="swiper-wrapper">
+                                @@loop('./html/templates/_prices-case.html', './html/json/prices-cases-service.json')
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="portfolio">
+                    <div class="portfolio__container">
+                        <h2 class="portfolio__title title-xl-desktop title-lg">Портфолио выполненных работ</h2>
+                        <div class="portfolio__header">
+                            <div class="portfolio__filters filters swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm active">Все проекты</a>
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm">Архитектура</a>
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm">Дизайн</a>
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm">Общественные пространства</a>
+                                </div>
+                            </div>
+                            <div class="portfolio__filters filters swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm active">Дома</a>
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm">Таунхаусы</a>
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm">Квартиры</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio__list">
+                            @@include('html/templates/_project.html', {
+                            "init": "02",
+                            "className": " project--column"
+                            })
+                            @@include('html/templates/_project.html', {
+                            "init": "03",
+                            "className": " project--column"
+                            })
+                            @@include('html/templates/_project.html', {
+                            "init": "04",
+                            "className": " project--column"
+                            })
+                        </div>
+                        <a href="" class="portfolio__more btn btn-secondary icon-emblem-up">Показать ещё</a>
+                    </div>
+                </section>
+                @@include('./html/_steps.html')
+                <section class="guarantees">
+                    <div class="guarantees__container">
+
+                    </div>
+                </section>
+                @@include('./html/_quiz.html')
+                @@include('./html/_callback.html')
+                @@include('./html/_faq.html')
+                @@include('./html/_banner.html')
+            </main>
+            @@include('html/_footer.html', {})
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

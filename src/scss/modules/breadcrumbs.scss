@@ -2,10 +2,7 @@
 	padding: 1.5rem 0;
 	& + * {
 		background: transparent !important;
-		padding: 1.5rem 0 5.5rem !important;
-		@media (min-width: $md3) {
-			padding: 1.5rem 0 9rem !important;
-		}
+		padding-top: 1.5rem !important;
 	}
 	// .breadcrumbs__list
 	&__list {
