@@ -1,6 +1,8 @@
 .form {
-	// .form__btn
-	&__btn {
+	// .form__row
+	&__row {
+		display: flex;
+		gap: 0.5rem;
 	}
 
 	// .form__control
@@ -14,6 +16,21 @@
 		background: $background-grey;
 
 		color: $text-primary-black;
+		&.form__control--dark {
+			background: $elements-tertiary-overlay-transparent;
+			color: $text-overlay-white;
+			&::placeholder {
+				color: $text-tertiary-grey;
+			}
+			&:hover {
+				background: rgba(255, 255, 255, 0.24);
+			}
+			&:focus {
+				color: $text-overlay-white;
+				background: rgba(255, 255, 255, 0.24);
+				outline: rem(1) solid $text-overlay-white;
+			}
+		}
 		&::placeholder {
 			opacity: 1;
 			color: $text-secondary-grey;

@@ -53,7 +53,7 @@
 	// .promo__bottom
 	&__bottom {
 		margin-top: 2rem;
-		padding-top: 3.5rem;
+		padding-top: 2rem;
 		border-top: rem(1) solid $elements-tertiary-overlay-transparent;
 		display: flex;
 		justify-content: space-between;
@@ -93,25 +93,35 @@
 	// .portfolio__filters
 	&__filters {
 		display: flex;
-	}
-	// .portfolio__filter
-	&__filter {
-	}
-	// .portfolio__filter-input
-	&__filter-input {
-		&:checked {
-			& + .portfolio__filter-btn {
-				background: $elements-secondary;
-				color: $elements-primary-hover;
+		margin: rem(-1);
+		&:nth-child(odd) {
+			& .filter-btn {
+				&:last-child {
+					border-right: 0;
+				}
+			}
+		}
+		&:nth-child(even) {
+			& .filter-btn {
+				&:last-child {
+					border-left: 0;
+				}
 			}
 		}
 	}
-	// .portfolio__filter-btn
-	&__filter-btn {
-	}
+
 	// .portfolio__projects
 	&__projects {
 		margin-top: 2.25rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	// .portfolio__more
+	&__more {
+		width: fit-content;
+		margin: 2.25rem auto 0;
+		display: flex;
 	}
 }
 
@@ -186,11 +196,26 @@
 	}
 	// .project__thumns
 	&__thumns {
+		margin: 0 auto 0 0;
+		max-width: 23.5rem;
 	}
 	// .project__thumb
 	&__thumb {
 		width: 5.625rem;
 		height: 5.625rem;
+		border: rem(1) solid #fff;
+		opacity: 0.48;
+		transition: opacity 0.3s ease;
+
+		cursor: pointer;
+		@media (any-hover: hover) {
+			&:hover {
+				opacity: 1;
+			}
+		}
+		&.swiper-slide-thumb-active {
+			opacity: 1;
+		}
 	}
 	// .project__controls
 	&__controls {
@@ -227,5 +252,437 @@
 	// .project__btn
 	&__btn {
 		margin-top: auto;
+	}
+}
+
+.prices {
+	padding: 9rem 0;
+	background: $background-white;
+	// .prices__container
+	&__container {
+	}
+	// .prices__body
+	&__body {
+		display: flex;
+		gap: 2.25rem;
+	}
+	// .prices__main
+	&__main {
+		flex: 0 0 33.875rem;
+	}
+	// .prices__title
+	&__title {
+	}
+	// .prices__subtitle
+	&__subtitle {
+		margin-top: 1.5rem;
+		color: $text-secondary-grey;
+		font-size: 1rem;
+		line-height: 150%;
+	}
+	// .prices__cases
+	&__cases {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 0.5rem;
+	}
+	// .prices__case
+	&__case {
+		background: $background-grey;
+		display: flex;
+		flex-direction: column;
+		padding: 0.3125rem;
+	}
+	// .prices__case-header
+	&__case-header {
+		padding: 1.5rem;
+		background: $background-grey;
+	}
+	// .prices__case-title
+	&__case-title {
+	}
+	// .prices__case-desc
+	&__case-desc {
+		margin-top: 0.5rem;
+		color: $text-secondary-grey;
+		font-size: 1rem;
+		line-height: 150%;
+	}
+	// .prices__case-value
+	&__case-value {
+		margin-top: 2rem;
+		color: $brand-deep-tide;
+	}
+	// .prices__case-list
+	&__case-list {
+		padding: 1rem 0.75rem 1.5rem;
+		flex: 1 1 auto;
+		color: $text-secondary-grey;
+		font-size: 1rem;
+		line-height: 150%;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.75rem;
+		& li {
+			display: flex;
+			align-items: center;
+			gap: 0.25rem;
+			&::before {
+				width: 1.25rem;
+				height: 1.25rem;
+				flex-shrink: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 0.25rem;
+				color: $brand-sea-mist;
+				@extend %ic, .icon-check-mark;
+			}
+		}
+	}
+	// .prices__case-btn
+	&__case-btn {
+		margin: 0.75rem;
+	}
+}
+
+.callback {
+	padding: 9rem 0;
+	// .callback__container
+	&__container {
+	}
+	// .callback__body
+	&__body {
+		background: $text-primary-black;
+		color: $text-overlay-white;
+		display: flex;
+		justify-content: space-between;
+	}
+	// .callback__main
+	&__main {
+		display: flex;
+		flex-direction: column;
+		padding: 2.25rem;
+		flex: 1 1 auto;
+	}
+	// .callback__title
+	&__title {
+	}
+	// .callback__subtitle
+	&__subtitle {
+		margin-top: 1.5rem;
+		max-width: 31.8125rem;
+	}
+	// .callback__form
+	&__form {
+		margin-top: 1.5rem;
+		margin-bottom: auto;
+		max-width: 38.875rem;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		.form__btn {
+			flex-shrink: 0;
+		}
+		.form__privacy {
+			a {
+				color: $elements-tertiary-overlay;
+			}
+		}
+	}
+	// .callback__footer
+	&__footer {
+		border-top: rem(1) solid $elements-tertiary-overlay-transparent;
+		padding-top: 1.5rem;
+	}
+	// .callback__footer-title
+	&__footer-title {
+		font-size: 1rem;
+		line-height: 150%;
+	}
+	// .callback__footer-body
+	&__footer-body {
+		margin-top: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	// .callback__footer-socials
+	&__footer-socials {
+		display: flex;
+		gap: 0.25rem;
+	}
+	// .callback__footer-social
+	&__footer-social {
+		width: 2.25rem;
+		height: 2.25rem;
+		font-size: 1.25rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 0.25rem;
+		background: $elements-tertiary-overlay-transparent;
+	}
+	// .callback__footer-phone
+	&__footer-phone {
+		transition: color 0.3s ease;
+		@media (any-hover: hover) {
+			&:hover {
+				color: $elements-tertiary-overlay-transparent;
+			}
+		}
+	}
+	// .callback__image
+	&__image {
+		border-left: rem(1) solid rgba($color: #fff, $alpha: 0.2);
+		flex: 0 0 33.8125rem;
+		background-image: url("data:image/svg+xml,%3Csvg width='543' height='543' viewBox='0 0 543 543' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect opacity='0.2' x='542' y='339.375' width='338.376' height='338.374' transform='rotate(180 542 339.375)' stroke='white'/%3E%3Crect opacity='0.2' x='542' y='207.586' width='206.588' height='206.587' transform='rotate(180 542 207.586)' stroke='white'/%3E%3Crect opacity='0.2' x='542' y='79.3613' width='78.3608' height='78.3604' transform='rotate(180 542 79.3613)' stroke='white'/%3E%3Cpath d='M542 129.228H413.773V1.0014H542V129.228Z' stroke='white'/%3E%3Cpath d='M414.333 128.671L1.00004 542' stroke='white'/%3E%3C/svg%3E%0A");
+		background-size: cover;
+		background-repeat: no-repeat;
+		margin: rem(-1);
+		padding: 4.87rem;
+	}
+}
+
+.about {
+	background: $background-white;
+	padding: 9rem 0rem;
+	// .about__container
+	&__container {
+	}
+	// .about__header
+	&__header {
+		display: flex;
+		gap: 2.25rem;
+	}
+	// .about__image
+	&__image {
+		position: relative;
+		flex: 0 0 33.75rem;
+		padding: 7.5rem;
+		border: rem(1) solid $divider;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='541' height='542' viewBox='0 0 541 542' fill='none'%3E%3Cpath d='M540 541L274 271M540 1L274 271M1.20401e-05 271H274' stroke='%23E4E4E4'/%3E%3C/svg%3E");
+		background-size: cover;
+		background-repeat: no-repeat;
+		& img {
+			width: 18.75rem;
+			height: 18.75rem;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			left: 1.5rem;
+			bottom: 1.5rem;
+			width: 7.3125rem;
+			height: 1.5rem;
+			background: url("@img/logo.svg") center / contain no-repeat;
+		}
+	}
+	// .about__body
+	&__body {
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.5rem;
+	}
+	// .about__label
+	&__label {
+		color: #000;
+		background: $elements-secondary;
+		font-size: 0.875rem;
+		line-height: 114.286%;
+		padding: 0.38rem;
+	}
+	// .about__title
+	&__title {
+	}
+	// .about__row
+	&__row {
+		margin-top: auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+	// .about__tagline
+	&__tagline {
+	}
+	// .about__btn
+	&__btn {
+	}
+	// .about__numbers
+	&__numbers {
+		margin-top: 2.25rem;
+		display: flex;
+		gap: 2.25rem;
+	}
+	// .about__numbers-block
+	&__numbers-block {
+		border-top: rem(1) solid $divider;
+		border-right: rem(1) solid $divider;
+		display: flex;
+		justify-content: space-between;
+		padding: 1rem 1.5rem 0rem 0rem;
+		flex: 1 1 50%;
+		&:first-child {
+			flex: 0 0 33.75rem;
+		}
+	}
+	// .about__numbers-value
+	&__numbers-value {
+		color: $brand-sea-mist;
+		font-family: $font-steppe;
+		font-size: 5.125rem;
+		line-height: 112.195%;
+		letter-spacing: -0.3075rem;
+	}
+	// .about__numbers-text
+	&__numbers-text {
+		text-align: right;
+		color: $text-secondary-grey;
+		font-size: 1rem;
+		line-height: 150%;
+		max-width: 16rem;
+	}
+}
+
+.reviews {
+	padding: 9rem 0;
+	// .reviews__container
+	&__container {
+	}
+	// .reviews__title
+	&__title {
+		text-align: center;
+	}
+	// .reviews__slider
+	&__slider {
+		margin-top: 2.75rem;
+		overflow: visible;
+		max-width: 55.625rem;
+	}
+	// .reviews__controls
+	&__controls {
+		margin-top: 2.75rem;
+		display: flex;
+		gap: 0.25rem;
+		justify-content: center;
+	}
+	// .reviews__prev
+	&__prev {
+	}
+	// .reviews__next
+	&__next {
+	}
+}
+
+.review {
+	background: $background-white;
+	padding: 0.3125rem;
+	display: flex;
+	&.swiper-slide {
+		height: auto;
+		opacity: 0.4;
+		transition: opacity 0.8s ease, transform 0.8s ease;
+		// pointer-events: none;
+		transform: scale(math.div(354, 390));
+		&.swiper-slide-active {
+			pointer-events: all;
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+	// .review__body
+	&__body {
+		background: $background-grey;
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		flex: 1 1 auto;
+	}
+	// .review__rate
+	&__rate {
+		display: flex;
+		gap: 0.15rem;
+		font-size: 0.75rem;
+		color: $brand-deep-tide;
+	}
+	// .review__rate-item
+	&__rate-item {
+	}
+	// .review__caption
+	&__caption {
+	}
+	// .review__quote
+	&__quote {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		font-size: 1rem;
+		line-height: 150%;
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+	}
+	// .review__more
+	&__more {
+		color: $brand-deep-tide;
+		line-height: 125%;
+		text-decoration: underline;
+		text-underline-position: from-font;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+	// .review__gallery
+	&__gallery {
+		margin-top: 1rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 6rem);
+		gap: 0.31rem;
+	}
+	// .review__gallery-item
+	&__gallery-item {
+		aspect-ratio: 1;
+		border-radius: 0.25rem;
+		border: rem(1) solid #fff;
+		& img {
+			border-radius: 0.25rem;
+		}
+	}
+	// .review__side
+	&__side {
+		flex: 0 0 20rem;
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.75rem;
+	}
+	// .review__thumb
+	&__thumb {
+		width: 4.5rem;
+		height: 4.5rem;
+		aspect-ratio: 1/1;
+	}
+	// .review__name
+	&__name {
+		margin-top: 0.25rem;
+	}
+	// .review__date
+	&__date {
+		overflow: hidden;
+		color: $text-tertiary-grey;
+		font-size: 1rem;
+		line-height: 150%;
+	}
+	// .review__btn
+	&__btn {
+		margin-top: auto;
+		width: 100%;
 	}
 }

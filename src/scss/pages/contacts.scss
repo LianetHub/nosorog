@@ -1,7 +1,15 @@
 .contacts {
-	padding: 1.5rem 0 5.5rem;
+	&:first-child {
+		background: transparent;
+		padding: 1.5rem 0 5.5rem;
+		@media (min-width: $md2) {
+			padding: 1.5rem 0 9rem;
+		}
+	}
+	background: #fff;
+	padding: 5.5rem 0 1.5rem;
 	@media (min-width: $md2) {
-		padding: 1.5rem 0 9rem;
+		padding: 9rem 0 1.5rem;
 	}
 	// .contacts__container
 	&__container {

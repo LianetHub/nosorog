@@ -481,6 +481,60 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    if (document.querySelectorAll('.project').length > 0) {
+        document.querySelectorAll('.project').forEach(project => {
+
+            const mainSliderEl = project.querySelector('.project__slider');
+            const thumbsSliderEl = project.querySelector('.project__thumns'); // Corrected: select the thumbnail slider element
+            const prevBtn = project.querySelector('.project__controls-prev');
+            const nextBtn = project.querySelector('.project__controls-next')
+
+
+            const thumbsSlider = new Swiper(thumbsSliderEl, {
+                spaceBetween: 5,
+                slidesPerView: "auto",
+                freeMode: true,
+                loop: true,
+                watchSlidesProgress: true,
+
+            });
+
+            const mainSlider = new Swiper(mainSliderEl, {
+                spaceBetween: 10,
+                loop: true,
+                effect: "fade",
+                fadeEffect: {
+                    crossFade: true
+                },
+                autoplay: {
+                    delay: 8000,
+                    stopOnLastSlide: false,
+                },
+                navigation: {
+                    nextEl: nextBtn,
+                    prevEl: prevBtn,
+                },
+                thumbs: {
+                    swiper: thumbsSlider
+                },
+                on: {
+                    init: (swiper) => {
+                        const nextEl = swiper.navigation.nextEl;
+                        let speed = swiper.params.speed;
+                        let autoplaySpeed = swiper.params.autoplay.delay;
+                        nextEl.style.setProperty('--counting-speed', ((speed + autoplaySpeed) / 1000) + 's');
+                        nextEl.classList.add('counting');
+                    },
+                    slideChangeTransitionStart: (swiper) => {
+                        const nextEl = swiper.navigation.nextEl;
+                        nextEl.classList.remove('counting');
+                        void nextEl.offsetWidth;
+                        nextEl.classList.add('counting');
+                    }
+                }
+            });
+        });
+    }
 
     if (document.querySelectorAll('.filters').length > 0) {
         document.querySelectorAll('.filters').forEach(filter => {
@@ -489,6 +543,38 @@ document.addEventListener("DOMContentLoaded", () => {
             })
         });
     }
+
+    if (document.querySelector('.reviews__slider')) {
+        new Swiper('.reviews__slider', {
+            slidesPerView: 1,
+            speed: 800,
+            loop: true,
+            autoplay: {
+                delay: 8000,
+                stopOnLastSlide: false,
+            },
+            navigation: {
+                prevEl: '.reviews__prev',
+                nextEl: '.reviews__next'
+            },
+            on: {
+                init: (swiper) => {
+                    const nextEl = swiper.navigation.nextEl;
+                    let speed = swiper.params.speed;
+                    let autoplaySpeed = swiper.params.autoplay.delay;
+                    nextEl.style.setProperty('--counting-speed', ((speed + autoplaySpeed) / 1000) + 's');
+                    nextEl.classList.add('counting');
+                },
+                slideChangeTransitionStart: (swiper) => {
+                    const nextEl = swiper.navigation.nextEl;
+                    nextEl.classList.remove('counting');
+                    void nextEl.offsetWidth;
+                    nextEl.classList.add('counting');
+                }
+            }
+        })
+    }
+
 
     if (document.querySelector('.blog__slider')) {
         new Swiper('.blog__slider', {

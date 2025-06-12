@@ -1,4 +1,4 @@
-<div class="review swiper-slide">
+<div class="review@@className">
     <div class="review__body">
         <div class="review__rate">
             <span class="review__rate-item icon-star"></span>
@@ -7,23 +7,30 @@
             <span class="review__rate-item icon-star"></span>
             <span class="review__rate-item icon-star"></span>
         </div>
-        <h3 class="review__style">@@style</h3>
+        <h3 class="review__caption subtitle">@@style</h3>
         <blockquote class="review__quote">@@quote</blockquote>
         <a href="" class="review__more">Показать польностью</a>
-        @@if(typeof gallery !== 'undefined') {
         <div class="review__gallery">
-            @@for(var i = 0; i < gallery; i++) { <a href="`+gallery[i]+`" data-fancybox="review-gallery-@@id" class="review__gallery-item">
-                <img src="`+gallery[i]+`" alt="Фото проекта">
-                </a>}
+            <a href="@img/projects/05.jpg" data-fancybox="review-gallery-@@id" class="review__gallery-item">
+                <img src="@img/projects/05.png" class="cover-image" alt="Фото проекта">
+            </a>
+            <a href="@img/projects/07.png" data-fancybox="review-gallery-@@id" class="review__gallery-item">
+                <img src="@img/projects/06.png" class="cover-image" alt="Фото проекта">
+            </a>
+            <a href="@img/projects/08.png" data-fancybox="review-gallery-@@id" class="review__gallery-item">
+                <img src="@img/projects/07.png" class="cover-image" alt="Фото проекта">
+            </a>
+            <a href="@img/projects/08.png" data-fancybox="review-gallery-@@id" class="review__gallery-item">
+                <img src="@img/projects/08.png" class="cover-image" alt="Фото проекта">
+            </a>
         </div>
-        }
     </div>
     <div class="review__side">
         <div class="review__thumb">
             <img src="@@thumb" alt="Фото автора">
         </div>
-        <div class="review__name">@@name</div>
+        <div class="review__name subtitle">@@name</div>
         <time datetime="@@datetime" class="review__date">@@time</time>
-        <a href="" class="review__btn btn btn-tertiary icon-emblem-up">Посмотреть проект</a>
+        <a href="" class="review__btn btn btn-secondary icon-emblem-up">Посмотреть проект</a>
     </div>
 </div>

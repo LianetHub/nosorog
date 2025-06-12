@@ -18,6 +18,9 @@
 	}
 }
 
+.icon-star:before {
+	content: "\e912";
+}
 .icon-check-mark:before {
 	content: "\e900";
 }
@@ -72,7 +75,6 @@
 .icon-features-team:before {
 	content: "\e911";
 }
-
 .icon-minus:before {
 	content: "\e913";
 }

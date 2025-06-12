@@ -42,49 +42,41 @@
                     <div class="portfolio__container">
                         <h2 class="portfolio__title title-xl">Портфолио</h2>
                         <div class="portfolio__header">
-                            <div class="portfolio__filters">
-                                <label class="portfolio__filter">
-                                    <input type="radio" name="types" checked value="all" class="portfolio__filter-input hidden" hidden>
-                                    <span class="portfolio__filter-btn btn btn-sm">Все проекты</span>
-                                </label>
-                                <label class="portfolio__filter">
-                                    <input type="radio" name="types" value="architecture" class="portfolio__filter-input hidden" hidden>
-                                    <span class="portfolio__filter-btn btn btn-sm">Архитектура</span>
-                                </label>
-                                <label class="portfolio__filter">
-                                    <input type="radio" name="types" value="design" class="portfolio__filter-input hidden" hidden>
-                                    <span class="portfolio__filter-btn btn btn-sm">Дизайн</span>
-                                </label>
-                                <label class="portfolio__filter">
-                                    <input type="radio" name="types" value="public-spaces" class="portfolio__filter-input hidden" hidden>
-                                    <span class="portfolio__filter-btn btn btn-sm">Общественные пространства</span>
-                                </label>
+                            <div class="portfolio__filters filters swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm active">Все проекты</a>
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm">Архитектура</a>
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm">Дизайн</a>
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm">Общественные пространства</a>
+                                </div>
                             </div>
-                            <div class="portfolio__filters">
-                                <label class="portfolio__filter">
-                                    <input type="radio" name="categories" checked value="home" class="portfolio__filter-input hidden" hidden>
-                                    <span class="portfolio__filter-btn btn btn-sm">Дома</span>
-                                </label>
-                                <label class="portfolio__filter">
-                                    <input type="radio" name="categories" value="townhouses" class="portfolio__filter-input hidden" hidden>
-                                    <span class="portfolio__filter-btn btn btn-sm">Таунхаусы</span>
-                                </label>
-                                <label class="portfolio__filter">
-                                    <input type="radio" name="categories" value="apartments" class="portfolio__filter-input hidden" hidden>
-                                    <span class="portfolio__filter-btn btn btn-sm">Квартиры</span>
-                                </label>
+                            <div class="portfolio__filters filters swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm active">Дома</a>
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm">Таунхаусы</a>
+                                    <a href="" class="swiper-slide filter-btn btn btn-sm">Квартиры</a>
+                                </div>
                             </div>
                         </div>
                         <div class="portfolio__projects">
-                            @@include('html/templates/_project.html', {})
+                            @@include('html/templates/_project.html', {
+                            "init": "02"
+                            })
+                            @@include('html/templates/_project.html', {
+                            "init": "03"
+                            })
+                            @@include('html/templates/_project.html', {
+                            "init": "04"
+                            })
                         </div>
+                        <a href="" class="portfolio__more btn btn-secondary icon-emblem-up">Показать ещё</a>
                     </div>
                 </section>
                 <section class="prices">
                     <div class="prices__container">
                         <div class="prices__body">
                             <div class="prices__main">
-                                <h2 class="prices__title">Стоимость услуг</h2>
+                                <h2 class="prices__title title-xl-desktop title-md">Стоимость услуг</h2>
                                 <p class="prices__subtitle">Наш новый проект сочетает в себе два противоположных стиля — лофт и нео-классику. Дом получился по‑настоящему необычным: в нем практически нет прямоугольных</p>
                             </div>
                             <div class="prices__cases">
@@ -98,11 +90,11 @@
                         <div class="callback__body">
                             <div class="callback__main">
                                 <h2 class="callback__title title">Обсудим ваш проект?</h2>
-                                <p class="callback__subtitle">Подробно ответим на вопросы, и проконсультируем по выбору индивидуального решения</p>
+                                <p class="callback__subtitle subtitle">Подробно ответим на вопросы, и проконсультируем по выбору индивидуального решения</p>
                                 <form action="#" class="callback__form">
                                     <div class="form__row">
-                                        <input type="text" name="phone" class="form__control" placeholder="Номер телефона">
-                                        <button type="submit" class="btn btn-secondary icon-emblem-up">Заказать звонок</button>
+                                        <input type="tel" name="phone" class="form__control form__control--dark" placeholder="Номер телефона">
+                                        <button type="submit" class="form__btn btn btn-secondary icon-emblem-up">Заказать звонок</button>
                                     </div>
                                     <div class="form__privacy">
                                         Отправляя данную форму вы соглашаетесь с <a href="">политикой обработки персональных данных</a>
@@ -116,7 +108,7 @@
                                             <a href="" class="callback__footer-social icon-viber"></a>
                                             <a href="" class="callback__footer-social icon-whatsapp"></a>
                                         </div>
-                                        <a href="tel:+79094399911" class="callback__footer-phone">+7 909 439-99-11</a>
+                                        <a href="tel:+79094399911" class="callback__footer-phone title-sm">+7 909 439-99-11</a>
                                     </div>
                                 </div>
                             </div>
@@ -130,13 +122,13 @@
                     <div class="about__container">
                         <div class="about__header">
                             <div class="about__image">
-                                <img src="@img/about.jpg" alt="Фото коллектива">
+                                <img src="@img/about.jpg" class="cover-image" alt="Фото коллектива">
                             </div>
                             <div class="about__body">
                                 <div class="about__label">О нас</div>
-                                <h2 class="about__title title">Архитектурное бюро NOSOROG — это люди, которых объединяет любимое дело и стремление к созданию и реализации простого, но функционального и уникального пространства.</h2>
+                                <h2 class="about__title title-lg-desktop subtitle">Архитектурное бюро NOSOROG — это люди, которых объединяет любимое дело и стремление к созданию и реализации простого, но функционального и уникального пространства.</h2>
                                 <div class="about__row">
-                                    <div class="about__tagline">Мы занимаемся архитектурным проектированием, ведём строительные и ремонтные работы, разрабатываем ландшафтный дизайн и дизайн интерьера.</div>
+                                    <div class="about__tagline subtitle-desktop">Мы занимаемся архитектурным проектированием, ведём строительные и ремонтные работы, разрабатываем ландшафтный дизайн и дизайн интерьера.</div>
                                     <a href="" class="about__btn btn btn-primary icon-emblem-up">О компании</a>
                                 </div>
                             </div>
@@ -159,14 +151,14 @@
                 </section>
                 <section class="reviews">
                     <div class="reviews__container">
-                        <h2 class="reviews__title title">Отзывы о нашей работе</h2>
+                        <h2 class="reviews__title title-xl-desktop title-md">Отзывы о нашей работе</h2>
                         <div class="reviews__slider swiper">
                             <div class="swiper-wrapper">
                                 @@loop('./html/templates/_review-slide.html', './html/json/reviews.json')
                             </div>
                             <div class="reviews__controls">
-                                <button type="button" class="reviews__prev swiper-button-prev"></button>
-                                <button type="button" class="reviews__next swiper-button-next"></button>
+                                <button type="button" class="reviews__prev swiper-button-prev swiper-button-dark"></button>
+                                <button type="button" class="reviews__next swiper-button-next swiper-button-dark"></button>
                             </div>
                         </div>
                     </div>
