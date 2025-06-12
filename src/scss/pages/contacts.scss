@@ -1,11 +1,4 @@
 .contacts {
-	&:first-child {
-		background: transparent;
-		padding: 1.5rem 0 5.5rem;
-		@media (min-width: $md3) {
-			padding: 1.5rem 0 9rem;
-		}
-	}
 	background: #fff;
 	padding: 5.5rem 0 0rem;
 	@media (min-width: $md3) {

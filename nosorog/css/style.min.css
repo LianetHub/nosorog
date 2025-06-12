@@ -1,4 +1,11 @@
 @font-face {
+  font-family: "AeonikPro";
+  font-display: swap;
+  src: url("../fonts/AeonikPro-Regular.woff2") format("woff2"), url("../fonts/AeonikPro-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
   font-family: "icons";
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
@@ -9,13 +16,6 @@
   font-family: "Steppe";
   font-display: swap;
   src: url("../fonts/Steppe-Regular.woff2") format("woff2"), url("../fonts/Steppe-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "AeonikPro";
-  font-display: swap;
-  src: url("../fonts/AeonikPro-Regular.woff2") format("woff2"), url("../fonts/AeonikPro-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -247,6 +247,10 @@
   color: #04181e;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .fancybox__container {
   max-width: 100% !important;
   padding: 0 !important;
@@ -434,6 +438,15 @@
 
 .breadcrumbs {
   padding: 1.5rem 0;
+}
+.breadcrumbs + * {
+  background: transparent !important;
+  padding: 1.5rem 0 5.5rem !important;
+}
+@media (min-width: 1023.98px) {
+  .breadcrumbs + * {
+    padding: 1.5rem 0 9rem !important;
+  }
 }
 .breadcrumbs__list {
   display: flex;
@@ -2328,8 +2341,44 @@ body {
     padding: 9rem 0;
   }
 }
-.reviews__title {
-  text-align: center;
+.reviews__subtitlte {
+  display: none;
+}
+@media (min-width: 575.98px) {
+  .reviews__subtitlte {
+    line-height: 150%;
+    margin-top: 2.25rem;
+    display: block;
+  }
+}
+@media (min-width: 1023.98px) {
+  .reviews__subtitlte {
+    margin-top: 3rem;
+  }
+}
+.reviews__btn {
+  display: none;
+}
+@media (min-width: 575.98px) {
+  .reviews__btn {
+    margin-top: 1rem;
+    display: inline-flex;
+  }
+}
+.reviews__body {
+  margin-top: 2.25rem;
+}
+@media (min-width: 1023.98px) {
+  .reviews__body {
+    margin-top: 3rem;
+  }
+}
+.reviews__more {
+  margin-top: 3rem;
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 .reviews__slider {
   margin-top: 2.75rem;
@@ -2463,15 +2512,6 @@ body {
 .contacts {
   background: #fff;
   padding: 5.5rem 0 0rem;
-}
-.contacts:first-child {
-  background: transparent;
-  padding: 1.5rem 0 5.5rem;
-}
-@media (min-width: 1023.98px) {
-  .contacts:first-child {
-    padding: 1.5rem 0 9rem;
-  }
 }
 @media (min-width: 1023.98px) {
   .contacts {
