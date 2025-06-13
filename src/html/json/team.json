@@ -1,0 +1,32 @@
+[
+    {
+        "image": "@img/team/Dmitry-Davidenko.jpg",
+        "name": "Дмитрий Давиденко",
+        "position": "Учредитель / руководитель"
+    },
+    {
+        "image": "@img/team/Nikolai-Fil.jpg",
+        "name": "Николай Филь",
+        "position": "Архитектор / дизайнер"
+    },
+    {
+        "image": "@img/team/Dmitry-Olkha.jpg",
+        "name": "Дмитрий Ольха",
+        "position": "Архитектор / дизайнер"
+    },
+    {
+        "image": "@img/team/Dmitry-Davidenko.jpg",
+        "name": "Дмитрий Давиденко",
+        "position": "Учредитель / руководитель"
+    },
+    {
+        "image": "@img/team/Nikolai-Fil.jpg",
+        "name": "Николай Филь",
+        "position": "Архитектор / дизайнер"
+    },
+    {
+        "image": "@img/team/Dmitry-Olkha.jpg",
+        "name": "Дмитрий Ольха",
+        "position": "Архитектор / дизайнер"
+    }
+]

@@ -484,7 +484,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll('.project').forEach(project => {
 
             const mainSliderEl = project.querySelector('.project__slider');
-            const thumbsSliderEl = project.querySelector('.project__thumbs'); // Corrected: select the thumbnail slider element
+            const thumbsSliderEl = project.querySelector('.project__thumbs');
             const prevBtn = project.querySelector('.project__controls-prev');
             const nextBtn = project.querySelector('.project__controls-next')
 
@@ -670,6 +670,26 @@ document.addEventListener("DOMContentLoaded", () => {
                     nextEl.classList.add('counting');
                 }
             }
+        })
+    }
+
+    if (document.querySelector('.team__slider')) {
+        new Swiper('.team__slider', {
+            spaceBetween: 24,
+            slidesPerView: "auto",
+            navigation: {
+                nextEl: '.team__slider-next',
+                prevEl: '.team__slider-prev'
+            },
+            breakpoints: {
+                767.98: {
+                    slidesPerView: 2,
+                },
+                1279.98: {
+                    slidesPerView: 3,
+                }
+            }
+
         })
     }
 

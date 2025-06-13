@@ -621,6 +621,10 @@
 	&__desc {
 		color: $text-tertiary-grey;
 		line-height: 150%;
+		font-size: 0.875rem;
+		@media (min-width: $md3) {
+			font-size: 1rem;
+		}
 	}
 	// .callback__list
 	&__list {
