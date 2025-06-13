@@ -693,6 +693,13 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    if (document.querySelector('.cases__slider')) {
+        new Swiper('.cases__slider', {
+            spaceBetween: 16,
+            slidesPerView: "auto",
+        })
+    }
+
 
     function getMobileSlider(sliderName, options) {
 

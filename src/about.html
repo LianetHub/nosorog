@@ -7,9 +7,72 @@
         <div class="wrapper">
             @@include('html/_header.html', {})
             <main class="page">
-
+                <nav aria-label="Навигация" class="breadcrumbs">
+                    <div class="breadcrumbs__container">
+                        <ul class="breadcrumbs__list">
+                            <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+                            <li class="breadcrumbs__item"><a class="breadcrumbs__link active">О компании</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <section class="company">
+                    <div class="company__container">
+                        <div class="company__header">
+                            <div class="company__tagline">Проектируем, строим, разрабатываем</div>
+                            <ul class="company__employees">
+                                <li class="company__employee">
+                                    <img src="@img/team/Nikolai-Fil-large.png" class="cover-image" alt="Фото сотрудника">
+                                </li>
+                                <li class="company__employee">
+                                    <img src="@img/team/Dmitry-Davidenko-large.png" class="cover-image" alt="Фото сотрудника">
+                                </li>
+                                <li class="company__employee">
+                                    <img src="@img/team/alexandra.png" class="cover-image" alt="Фото сотрудника">
+                                </li>
+                                <li class="company__employee">
+                                    <img src="@img/team/Dmitry-Olkha-large.png" class="cover-image" alt="Фото сотрудника">
+                                </li>
+                                <li class="company__employee-add icon-plus"></li>
+                            </ul>
+                        </div>
+                        <h1 class="company__title title-xl-desktop title-sm">Cтудия дизайна Носорог - <span>творческая команда</span> дизайнеров, архитекторов, менеджеров комплектации и других квалифицированных специалистов.</h1>
+                        <p class="company__desc">Больше 10 лет наша студия работает с частными и коммерческими проектами по ЮФО: проектируем частные дома и коттеджи, реализуем проекты в гостиничном бизнесе и в сфере HoReCa, строим офисы и здания для общественного пользования.</p>
+                    </div>
+                </section>
                 @@include('./html/_about.html')
-
+                <section class="founder">
+                    <div class="founder__container">
+                        <div class="founder__body">
+                            <div class="founder__main">
+                                <div class="founder__label">Основатель студии</div>
+                                <p class="founder__desc subtitle-desktop">Мы занимаемся архитектурным проектированием, ведём строительные и ремонтные работы, разрабатываем ландшафтный дизайн и дизайн интерьера.</p>
+                                <h2 class="founder__title title-md-desktop subtitle">«Архитектурное бюро NOSOROG — это люди, которых объединяет любимое дело и стремление к созданию и реализации простого, но функционального и уникального пространства»</h2>
+                            </div>
+                            <figure class="founder__image">
+                                <img src="@img/team/Dmitry-Davidenko-large.png" alt="Фото основателя">
+                                <figcaption>
+                                    Дмитрий Давиденко
+                                    <span>Основатель студии «Носорог»</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+                @@include('./html/_team.html')
+                <section class="cases">
+                    <div class="cases__container">
+                        <h2 class="cases__title title-xl-desktop title-md">Чем мы занимаемся?</h2>
+                        <p class="cases__subtitle title-sm-desktop subtitle">Создаем пространства, которые вдохновляют: от идеи до воплощения, с заботой о каждой детали.</p>
+                        <div class="cases__slider swiper">
+                            <div class="swiper-wrapper">
+                                @@loop('./html/templates/_case-item.html', './html/json/cases.json')
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @@include('./html/_steps.html', {
+                "className": "steps--large"
+                })
                 @@include('./html/_banner.html')
             </main>
             @@include('html/_footer.html', {})
