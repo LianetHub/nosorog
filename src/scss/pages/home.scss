@@ -137,6 +137,15 @@
 	&__slider {
 		margin-top: 2.75rem;
 	}
+	&__controls {
+		display: none;
+		@media (min-width: $md5) {
+			margin-top: rem(44);
+			display: flex;
+			justify-content: center;
+			gap: 0.25rem;
+		}
+	}
 	// .portfolio__list
 	&__list {
 		margin-top: 2.75rem;

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/_head.html', {
+    'title': 'Страница кейса'
+    })
+    <body>
+        <div class="wrapper">
+            @@include('html/_header.html', {})
+            <main class="page">
+                <nav aria-label="Навигация" class="breadcrumbs">
+                    <div class="breadcrumbs__container">
+                        <ul class="breadcrumbs__list">
+                            <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Главная</a></li>
+                            <li class="breadcrumbs__item"><a href="" class="breadcrumbs__link">Портфолио</a></li>
+                            <li class="breadcrumbs__item"><a class="breadcrumbs__link active">Строительство дома «под ключ». Проект «Ривьера House»</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <section class="service">
+                    <div class="service__container">
+                        <div class="service__body">
+                            <div class="service__gallery">
+                                <div class="service__slider swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="service__slide swiper-slide">
+                                            <img src="@img/projects/10.jpg" class="cover-image" alt="Фото проекта">
+                                        </div>
+                                        <div class="service__slide swiper-slide">
+                                            <img src="@img/projects/10.jpg" class="cover-image" alt="Фото проекта">
+                                        </div>
+                                        <div class="service__slide swiper-slide">
+                                            <img src="@img/projects/10.jpg" class="cover-image" alt="Фото проекта">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service__controls">
+                                    <button type="button" class="service__prev swiper-button-prev"></button>
+                                    <button type="button" class="service__next swiper-button-next"></button>
+                                </div>
+                            </div>
+                            <div class="service__case">
+                                <div class="project__tags">
+                                    <div class="project__tag project__tag--primary">S=500 м2</div>
+                                    <div class="project__tag project__tag--sea-mint">2024 год</div>
+                                    <div class="project__tag">Ростов-на-Дону</div>
+                                </div>
+                                <h1 class="service__case-title title-lg-desktop title-sm">Строительство дома «под ключ» Проект «Ривьера House»</h1>
+                                <div class="service__case-location icon-pin">Коттеджный поселок “Изумруд”</div>
+                                <ul class="service__case-list">
+                                    <li class="service__case-item">
+                                        <div class="service__case-prop">Объект</div>
+                                        <div class="service__case-value">Дом</div>
+                                    </li>
+                                    <li class="service__case-item">
+                                        <div class="service__case-prop">Комнаты</div>
+                                        <div class="service__case-value">10 комнат</div>
+                                    </li>
+                                    <li class="service__case-item">
+                                        <div class="service__case-prop">Этажность</div>
+                                        <div class="service__case-value">2 этажа</div>
+                                    </li>
+                                    <li class="service__case-item">
+                                        <div class="service__case-prop">Стиль</div>
+                                        <div class="service__case-value">Минимализм с классическими элементами</div>
+                                    </li>
+                                </ul>
+                                <div class="service__designer">
+                                    <div class="service__designer-thumb">
+                                        <img src="@img/team/Dmitry-Davidenko-large.png" class="cover-image" alt="Фото дизайнера">
+                                    </div>
+                                    <div class="service__designer-body">
+                                        <div class="service__designer-position">Ведущий дизайнер проекта</div>
+                                        <div class="service__designer-name subtitle">Дмитрий Давиденко</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="case">
+                    <div class="case__container">
+                        <div class="case__body">
+                            <div class="case__scheme">
+                                <h2 class="case__scheme-title title-desktop title-md">Планировка</h2>
+                                <div class="case__scheme-tabs">
+                                    <button type="button" class="case__scheme-btn btn btn-sm filter-btn active">1 этаж</button>
+                                    <button type="button" class="case__scheme-btn btn btn-sm filter-btn">2 этаж</button>
+                                </div>
+                                <div class="case__scheme-content">
+                                    <div class="case__scheme-block active">
+                                        <img src="@img/scheme.png" alt="Планировка">
+                                    </div>
+                                    <div class="case__scheme-block ">
+                                        <img src="@img/scheme.png" alt="Планировка">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="case__info">
+                                <div class="case__info-block">
+                                    <h2 class="case__info-title title-desktop title-md">О проекте</h2>
+                                    <p class="case__info-desc subtitle">Мы занимаемся архитектурным проектированием, ведём строительные и ремонтные работы, разрабатываем ландшафтный дизайн и дизайн интерьера.</p>
+                                    <div class="case__info-text">
+                                        <p>Наш новый проект сочетает в себе два противоположных стиля — лофт и нео-классику. Дом получился по‑настоящему необычным: в нем практически нет прямоугольных помещений, но есть три эркера — два на фасаде и один в глубине здания.</p>
+                                        <p>Сложную архитектуру поддерживают декоративные элементы: фальш балки, металлические перила и бетонные стены. Связующим звеном всего интерьера выступает сине-серый цвет. Здесь он не смотрится холодным, наоборот, в сочетание с деревом он создаёт атмосферу уюта и тепла.</p>
+                                        <p>Второй этаж разделён на две зоны. В одной — детские комнаты с санузлом, во второй — родительская спальня с гардеробной, ванной комнатой и личным балконом с прекрасным видом на реку Дон.</p>
+                                    </div>
+                                </div>
+                                <div class="case__info-block">
+                                    <h3 class="case__info-title title-md">Задачи проекта</h3>
+                                    <ol class="case__info-list">
+                                        <li>Организовать постирочную и хозяйственный блок с удобным входом с кухни.</li>
+                                        <li>Установить между прихожей и гостиной стеклянные раздвижные перегородки</li>
+                                        <li>Спроектировать мастер-спальню с собственной ванной комнатой, включающей душевую.</li>
+                                    </ol>
+                                    <a href="" class="case__info-btn btn btn-primary icon-emblem-up">Хочу также</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="gallery">
+                    <div class="gallery__container">
+                        <div class="gallery__slider swiper">
+                            <div class="swiper-wrapper">
+                                <a href="@img/case/01.jpg" data-fancybox="gallery" class="gallery__item swiper-slide">
+                                    <img src="@img/case/01.jpg" class="cover-image" alt="Фото">
+                                </a>
+                                <a href="@img/case/02.jpg" data-fancybox="gallery" class="gallery__item swiper-slide">
+                                    <img src="@img/case/02.jpg" class="cover-image" alt="Фото">
+                                </a>
+                                <a href="@img/case/03.jpg" data-fancybox="gallery" class="gallery__item swiper-slide">
+                                    <img src="@img/case/03.jpg" class="cover-image" alt="Фото">
+                                </a>
+                                <a href="@img/case/04.jpg" data-fancybox="gallery" class="gallery__item swiper-slide">
+                                    <img src="@img/case/04.jpg" class="cover-image" alt="Фото">
+                                </a>
+                                <a href="@img/case/05.jpg" data-fancybox="gallery" class="gallery__item swiper-slide">
+                                    <img src="@img/case/05.jpg" class="cover-image" alt="Фото">
+                                </a>
+                                <a href="@img/case/06.jpg" data-fancybox="gallery" class="gallery__item swiper-slide">
+                                    <img src="@img/case/06.jpg" class="cover-image" alt="Фото">
+                                </a>
+                                <a href="@img/case/07.jpg" data-fancybox="gallery" class="gallery__item swiper-slide">
+                                    <img src="@img/case/07.jpg" class="cover-image" alt="Фото">
+                                </a>
+                                <a href="@img/case/08.jpg" data-fancybox="gallery" class="gallery__item swiper-slide">
+                                    <img src="@img/case/08.jpg" class="cover-image" alt="Фото">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <section class="portfolio">
+                    <div class="portfolio__container">
+                        <h2 class="portfolio__title title-xl-desktop title-lg">Смотрите также</h2>
+                        <div class="portfolio__slider swiper">
+                            <div class="swiper-wrapper">
+                                @@include('html/templates/_project.html', {
+                                "init": "02",
+                                "className": " swiper-slide project--column"
+                                })
+                                @@include('html/templates/_project.html', {
+                                "init": "03",
+                                "className": " swiper-slide project--column"
+                                })
+                                @@include('html/templates/_project.html', {
+                                "init": "04",
+                                "className": " swiper-slide project--column"
+                                })
+                                @@include('html/templates/_project.html', {
+                                "init": "05",
+                                "className": " swiper-slide project--column"
+                                })
+                                @@include('html/templates/_project.html', {
+                                "init": "06",
+                                "className": " swiper-slide project--column"
+                                })
+                            </div>
+                            <div class="portfolio__controls">
+                                <button type="button" class="portfolio__prev swiper-button-prev swiper-button-dark"></button>
+                                <button type="button" class="portfolio__next swiper-button-next swiper-button-dark"></button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                @@include('./html/_banner.html')
+            </main>
+            @@include('html/_footer.html', {})
+            @@include('html/_modal.html', {})
+            @@include('html/_js.html', {})
+        </div>
+    </body>
+</html>

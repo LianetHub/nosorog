@@ -391,6 +391,34 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
+        // scheme tabs
+        if (target.matches('.case__scheme-btn')) {
+            const schemeTabsContainer = target.closest('.case__scheme-tabs');
+            const schemeContent = target.closest('.case__scheme').querySelector('.case__scheme-content');
+
+            if (schemeTabsContainer && schemeContent) {
+
+                schemeTabsContainer.querySelectorAll('.case__scheme-btn').forEach(button => {
+                    button.classList.remove('active');
+                });
+
+
+                target.classList.add('active');
+
+                const buttonIndex = Array.from(schemeTabsContainer.children).indexOf(target);
+
+
+                schemeContent.querySelectorAll('.case__scheme-block').forEach(block => {
+                    block.classList.remove('active');
+                });
+
+
+                if (schemeContent.children[buttonIndex]) {
+                    schemeContent.children[buttonIndex].classList.add('active');
+                }
+            }
+        }
+
 
     });
 
@@ -626,8 +654,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (document.querySelector('.portfolio__slider')) {
         new Swiper('.portfolio__slider', {
-            slidesPerView: 3,
-            spaceBetween: 24
+
+            spaceBetween: 16,
+            slidesPerView: 1.15,
+            navigation: {
+                nextEl: ".portfolio__next",
+                prevEl: ".portfolio__prev"
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 24,
+                },
+                1279.98: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                },
+            },
         })
     }
 
@@ -696,6 +739,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.querySelector('.cases__slider')) {
         new Swiper('.cases__slider', {
             spaceBetween: 16,
+            slidesPerView: "auto",
+        })
+    }
+
+    if (document.querySelector('.gallery__slider')) {
+        getMobileSlider('.gallery__slider', {
+            spaceBetween: 8,
             slidesPerView: "auto",
         })
     }
